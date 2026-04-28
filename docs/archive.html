@@ -32,6 +32,8 @@
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="archive.html" aria-current="page">Archive</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="transparency.html">Transparency</a>
           <a href="methodology.html">Methodology</a>
           <a href="corrections.html">Corrections</a>
           <a href="about.html">About</a>
@@ -45,8 +47,34 @@
         Canonical list of published briefs. Each brief lives under <code>briefs/</code> in this repo. Machine-readable
         list: <a href="rss.xml">RSS 2.0</a> · <a href="atom.xml">Atom</a> · <a href="sitemap.xml">sitemap</a>.
       </p>
+      <div class="archive-controls card compact">
+        <h3 style="margin-top: 0">Find a brief fast</h3>
+        <div class="controls-row">
+          <label for="archive-search">Search title or summary</label>
+          <input
+            id="archive-search"
+            type="search"
+            placeholder="e.g. productivity, Fed, data centers"
+            autocomplete="off"
+          />
+        </div>
+        <div class="controls-row">
+          <label for="archive-tag-filter">Filter by tag</label>
+          <select id="archive-tag-filter">
+            <option value="">All tags</option>
+            <option value="ai">AI</option>
+            <option value="productivity">Productivity</option>
+            <option value="labor">Labor</option>
+            <option value="macro">Macro</option>
+            <option value="energy">Energy</option>
+            <option value="fed">Fed</option>
+            <option value="industrial policy">Industrial policy</option>
+          </select>
+        </div>
+        <p id="archive-results-summary" class="muted" style="margin-bottom: 0">Showing all briefs.</p>
+      </div>
 
-      <table>
+      <table id="archive-table">
         <thead>
           <tr>
             <th>Date</th>
@@ -55,40 +83,40 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2026-05-25</td>
+          <tr class="archive-row" data-tags="fed|dual mandate|labor|macro" data-title="what does “maximum employment” mean when the fed says it?" data-date="2026-05-25">
+            <td data-col="Date">2026-05-25</td>
             <td>
               <a href="briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html">What does “maximum employment” mean when the Fed says it?</a>
             </td>
-            <td>Fed, dual mandate, labor, macro</td>
+            <td data-col="Topic tags">Fed, dual mandate, labor, macro</td>
           </tr>
-          <tr>
-            <td>2026-05-18</td>
+          <tr class="archive-row" data-tags="ai|energy|data centers|climate" data-title="how much electricity do data centers use—and how much is “because of ai”?" data-date="2026-05-18">
+            <td data-col="Date">2026-05-18</td>
             <td>
               <a href="briefs/2026-05-18-how-much-electricity-do-data-centers-use.html">How much electricity do data centers use—and how much is “because of AI”?</a>
             </td>
-            <td>AI, energy, data centers, climate</td>
+            <td data-col="Topic tags">AI, energy, data centers, climate</td>
           </tr>
-          <tr>
-            <td>2026-05-11</td>
+          <tr class="archive-row" data-tags="bls|measurement|productivity" data-title="how is “labor productivity” actually measured?" data-date="2026-05-11">
+            <td data-col="Date">2026-05-11</td>
             <td>
               <a href="briefs/2026-05-11-how-is-labor-productivity-measured.html">How is “labor productivity” actually measured?</a>
             </td>
-            <td>BLS, measurement, productivity</td>
+            <td data-col="Topic tags">BLS, measurement, productivity</td>
           </tr>
-          <tr>
-            <td>2026-05-04</td>
+          <tr class="archive-row" data-tags="industrial policy|semiconductors|congress" data-title="what did the chips act actually fund?" data-date="2026-05-04">
+            <td data-col="Date">2026-05-04</td>
             <td>
               <a href="briefs/2026-05-04-what-did-the-chips-act-fund.html">What did the CHIPS Act actually fund?</a>
             </td>
-            <td>industrial policy, semiconductors, Congress</td>
+            <td data-col="Topic tags">industrial policy, semiconductors, Congress</td>
           </tr>
-          <tr>
-            <td>2026-04-27</td>
+          <tr class="archive-row" data-tags="ai|productivity|labor|macro" data-title="has generative ai already raised economy-wide productivity?" data-date="2026-04-27">
+            <td data-col="Date">2026-04-27</td>
             <td>
               <a href="briefs/2026-04-27-has-gen-ai-raised-productivity.html">Has generative AI already raised economy-wide productivity?</a>
             </td>
-            <td>AI, productivity, labor, macro</td>
+            <td data-col="Topic tags">AI, productivity, labor, macro</td>
           </tr>
         </tbody>
       </table>

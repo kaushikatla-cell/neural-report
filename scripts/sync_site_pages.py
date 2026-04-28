@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+from html import escape
 from pathlib import Path
 
 
@@ -40,15 +41,18 @@ def build_archive_tbody(briefs: list[dict]) -> str:
     lines = ["        <tbody>"]
     for b in briefs:
         href = f"briefs/{b['slug']}.html"
-        tags = ", ".join(b.get("tags", [])) or "—"
+        tags_list = b.get("tags", [])
+        tags = ", ".join(tags_list) or "—"
+        tags_attr = "|".join(t.lower().strip() for t in tags_list if t.strip())
+        title_attr = b["title"].lower()
         lines.extend(
             [
-                "          <tr>",
-                f"            <td>{b['date']}</td>",
+                f'          <tr class="archive-row" data-tags="{escape(tags_attr)}" data-title="{escape(title_attr)}" data-date="{escape(b["date"])}">',
+                f'            <td data-col="Date">{escape(b["date"])}</td>',
                 "            <td>",
-                f"              <a href=\"{href}\">{b['title']}</a>",
+                f'              <a href="{escape(href)}">{escape(b["title"])}</a>',
                 "            </td>",
-                f"            <td>{tags}</td>",
+                f'            <td data-col="Topic tags">{escape(tags)}</td>',
                 "          </tr>",
             ]
         )
@@ -65,7 +69,7 @@ def replace_index_latest(text: str, latest_html: str) -> str:
 
 
 def replace_archive_tbody(text: str, tbody_html: str) -> str:
-    pattern = re.compile(r"(\s*<table>\n(?:.|\n)*?<thead>(?:.|\n)*?</thead>\n)(\s*<tbody>.*?</tbody>)", re.DOTALL)
+    pattern = re.compile(r"(\s*<table[^>]*>\n(?:.|\n)*?<thead>(?:.|\n)*?</thead>\n)(\s*<tbody>.*?</tbody>)", re.DOTALL)
     out, n = pattern.subn(r"\1" + tbody_html, text, count=1)
     if n != 1:
         raise RuntimeError("Could not locate archive table body in docs/archive.html")
