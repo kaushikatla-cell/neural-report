@@ -20,6 +20,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Regenerate feeds and sitemap
         run: python3 scripts/generate_feeds.py
+      - name: Sync index/archive from manifest
+        run: python3 scripts/sync_site_pages.py
       - name: Regenerate OG images and sync brief meta
         run: python3 scripts/generate_og_images.py
       - name: Fail if generated files differ from commit
@@ -27,8 +29,11 @@ jobs:
           git diff --stat
           mapfile -t og_pngs < <(find docs/images/og -name '*.png' 2>/dev/null | sort)
           git diff --exit-code docs/rss.xml docs/atom.xml docs/sitemap.xml \
+            docs/index.html docs/archive.html \
             docs/images/og-default.png \
             "${og_pngs[@]}" \
             docs/briefs/*.html
       - name: Validate internal HTML hrefs
         run: python3 scripts/check_docs.py
+      - name: Validate editorial brief quality
+        run: python3 scripts/check_briefs.py

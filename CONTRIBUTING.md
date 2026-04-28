@@ -12,9 +12,9 @@ bash scripts/publish-check.sh
 
 (or `make publish-check` if you use Make). Requires **Pillow**: `python3 -m pip install -r requirements.txt` once per machine.
 
-That runs **`generate_feeds.py`**, **`generate_og_images.py`** (brief cards + `docs/images/og-default.png`, syncs brief `og:image` tags), then **`check_docs.py`** so feeds match [`scripts/site-manifest.json`](scripts/site-manifest.json) and relative links resolve.
+That runs **`generate_feeds.py`**, **`sync_site_pages.py`** (Latest + archive table), **`generate_og_images.py`** (brief cards + `docs/images/og-default.png`, syncs brief `og:image` tags), then **`check_docs.py`** + **`check_briefs.py`** so feeds/pages match [`scripts/site-manifest.json`](scripts/site-manifest.json), links resolve, and editorial structure stays consistent.
 
-Commit updated **`docs/rss.xml`**, **`docs/atom.xml`**, **`docs/sitemap.xml`**, **`docs/images/og/*.png`**, **`docs/images/og-default.png`**, and any **`docs/briefs/*.html`** OG meta changes after editing the manifest.
+Commit updated **`docs/rss.xml`**, **`docs/atom.xml`**, **`docs/sitemap.xml`**, **`docs/index.html`**, **`docs/archive.html`**, **`docs/images/og/*.png`**, **`docs/images/og-default.png`**, and any **`docs/briefs/*.html`** OG/meta changes after editing the manifest.
 
 ## Publishing a new Evidence Brief
 
@@ -28,11 +28,11 @@ Commit updated **`docs/rss.xml`**, **`docs/atom.xml`**, **`docs/sitemap.xml`**, 
 
 5. **`python3 scripts/generate_feeds.py`** — refreshes [`docs/rss.xml`](docs/rss.xml), [`docs/atom.xml`](docs/atom.xml), and [`docs/sitemap.xml`](docs/sitemap.xml). **Do not** hand-edit those three files.
 
-6. **`python3 scripts/generate_og_images.py`** — writes `docs/images/og/{slug}.png` and syncs per-brief Open Graph / Twitter / JSON-LD image URLs. **Do not** hand-edit generated PNGs.
+6. **`python3 scripts/sync_site_pages.py`** — rebuilds homepage “Latest” and archive table from the manifest.
 
-7. Update [`docs/archive.html`](docs/archive.html) and the “Latest” section on [`docs/index.html`](docs/index.html) if this is a new public ship.
+7. **`python3 scripts/generate_og_images.py`** — writes `docs/images/og/{slug}.png` and syncs per-brief Open Graph / Twitter / JSON-LD image URLs. **Do not** hand-edit generated PNGs.
 
-8. **`python3 scripts/check_docs.py`** (included in `publish-check.sh`). CI runs **site-outputs validate** + **docs check** on `main`.
+8. **`python3 scripts/check_docs.py`** and **`python3 scripts/check_briefs.py`** (included in `publish-check.sh`). CI runs **site-outputs validate** + link/editorial checks on `main`.
 
 9. **Custom domain:** run `python3 scripts/rewrite_site_base.py 'OLD_BASE' 'NEW_BASE'`, then re-run steps 5–6 and review the diff.
 

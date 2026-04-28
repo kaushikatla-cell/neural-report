@@ -13,6 +13,10 @@
       <guid isPermaLink="true">https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html</guid>
       <pubDate>Mon, 25 May 2026 12:00:00 GMT</pubDate>
       <description>Fed dual mandate, FOMC longer-run goals, and why maximum employment is not one fixed number.</description>
+      <category>Fed</category>
+      <category>dual mandate</category>
+      <category>labor</category>
+      <category>macro</category>
     </item>
     <item>
       <title>How much electricity do data centers use—and how much is “because of AI”?</title>
@@ -20,6 +24,10 @@
       <guid isPermaLink="true">https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html</guid>
       <pubDate>Mon, 18 May 2026 12:00:00 GMT</pubDate>
       <description>IEA global outlook for data centre electricity, AI as a driver, and scenario uncertainty.</description>
+      <category>AI</category>
+      <category>energy</category>
+      <category>data centers</category>
+      <category>climate</category>
     </item>
     <item>
       <title>How is “labor productivity” actually measured?</title>
@@ -27,6 +35,9 @@
       <guid isPermaLink="true">https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-11-how-is-labor-productivity-measured.html</guid>
       <pubDate>Mon, 11 May 2026 12:00:00 GMT</pubDate>
       <description>BLS definitions: output per hour, sector coverage, and why headlines mislead.</description>
+      <category>BLS</category>
+      <category>measurement</category>
+      <category>productivity</category>
     </item>
     <item>
       <title>What did the CHIPS Act actually fund?</title>
@@ -34,6 +45,9 @@
       <guid isPermaLink="true">https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-04-what-did-the-chips-act-fund.html</guid>
       <pubDate>Mon, 04 May 2026 12:00:00 GMT</pubDate>
       <description>CRS-based map of CHIPS Division A appropriations and global context.</description>
+      <category>industrial policy</category>
+      <category>semiconductors</category>
+      <category>Congress</category>
     </item>
     <item>
       <title>Has generative AI already raised economy-wide productivity?</title>
@@ -41,6 +55,10 @@
       <guid isPermaLink="true">https://kaushikatla-cell.github.io/neural-report/briefs/2026-04-27-has-gen-ai-raised-productivity.html</guid>
       <pubDate>Mon, 27 Apr 2026 12:00:00 GMT</pubDate>
       <description>IMF, BLS, and micro-evidence with explicit falsifiers.</description>
+      <category>AI</category>
+      <category>productivity</category>
+      <category>labor</category>
+      <category>macro</category>
     </item>
   </channel>
 </rss>

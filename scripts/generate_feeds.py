@@ -57,6 +57,8 @@ def write_rss_feed(root: Path, m: dict) -> None:
         lines.append(f'      <guid isPermaLink="true">{escape(url)}</guid>')
         lines.append(f"      <pubDate>{rss_pub_date(b['date'])}</pubDate>")
         lines.append(f"      <description>{escape(b['summary'])}</description>")
+        for tag in b.get("tags", []):
+            lines.append(f"      <category>{escape(tag)}</category>")
         lines.append("    </item>")
     lines.extend(["  </channel>", "</rss>"])
     out = root / "docs" / "rss.xml"
@@ -94,6 +96,8 @@ def write_atom_feed(root: Path, m: dict) -> None:
         lines.append(f'    <id>{escape(url)}</id>')
         lines.append(f"    <updated>{ts}</updated>")
         lines.append(f"    <summary>{escape(b['summary'])}</summary>")
+        for tag in b.get("tags", []):
+            lines.append(f'    <category term="{escape(tag)}" />')
         lines.append("  </entry>")
 
     lines.append("</feed>")

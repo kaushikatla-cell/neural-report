@@ -10,31 +10,36 @@
       "slug": "2026-05-25-what-does-maximum-employment-mean-for-the-fed",
       "title": "What does “maximum employment” mean when the Fed says it?",
       "date": "2026-05-25",
-      "summary": "Fed dual mandate, FOMC longer-run goals, and why maximum employment is not one fixed number."
+      "summary": "Fed dual mandate, FOMC longer-run goals, and why maximum employment is not one fixed number.",
+      "tags": ["Fed", "dual mandate", "labor", "macro"]
     },
     {
       "slug": "2026-05-18-how-much-electricity-do-data-centers-use",
       "title": "How much electricity do data centers use—and how much is “because of AI”?",
       "date": "2026-05-18",
-      "summary": "IEA global outlook for data centre electricity, AI as a driver, and scenario uncertainty."
+      "summary": "IEA global outlook for data centre electricity, AI as a driver, and scenario uncertainty.",
+      "tags": ["AI", "energy", "data centers", "climate"]
     },
     {
       "slug": "2026-05-11-how-is-labor-productivity-measured",
       "title": "How is “labor productivity” actually measured?",
       "date": "2026-05-11",
-      "summary": "BLS definitions: output per hour, sector coverage, and why headlines mislead."
+      "summary": "BLS definitions: output per hour, sector coverage, and why headlines mislead.",
+      "tags": ["BLS", "measurement", "productivity"]
     },
     {
       "slug": "2026-05-04-what-did-the-chips-act-fund",
       "title": "What did the CHIPS Act actually fund?",
       "date": "2026-05-04",
-      "summary": "CRS-based map of CHIPS Division A appropriations and global context."
+      "summary": "CRS-based map of CHIPS Division A appropriations and global context.",
+      "tags": ["industrial policy", "semiconductors", "Congress"]
     },
     {
       "slug": "2026-04-27-has-gen-ai-raised-productivity",
       "title": "Has generative AI already raised economy-wide productivity?",
       "date": "2026-04-27",
-      "summary": "IMF, BLS, and micro-evidence with explicit falsifiers."
+      "summary": "IMF, BLS, and micro-evidence with explicit falsifiers.",
+      "tags": ["AI", "productivity", "labor", "macro"]
     }
   ],
   "sitemap_static": [
