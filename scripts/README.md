@@ -7,6 +7,7 @@
 | [`generate_feeds.py`](generate_feeds.py) | Writes `docs/rss.xml` (RSS 2.0), `docs/atom.xml` (Atom), and `docs/sitemap.xml` from the manifest. Run after every manifest change. |
 | [`sync_site_pages.py`](sync_site_pages.py) | Rebuilds `docs/index.html` (Latest list) and `docs/archive.html` (table rows) from the manifest. |
 | [`generate_dashboard.py`](generate_dashboard.py) | Builds `docs/dashboard.html` from manifest + monthly metrics + link-audit snapshot. |
+| [`generate_library_page.py`](generate_library_page.py) | Builds `docs/library.html` from `research/paper_library.csv` (filterable research index). |
 | [`generate_transparency_page.py`](generate_transparency_page.py) | Builds `docs/transparency.html` from `metrics/transparency/*.md` notes. |
 | [`generate_og_images.py`](generate_og_images.py) | Renders **1200×630** PNGs: `docs/images/og/{slug}.png` + `docs/images/og-default.png`; syncs brief OG/Twitter/JSON-LD image URLs. Requires Pillow (`requirements.txt`). |
 | [`bootstrap_brief.py`](bootstrap_brief.py) | One-command new brief scaffold: creates HTML from template + appends manifest entry (+ optional `--run-all`). |
@@ -24,6 +25,7 @@ python3 scripts/generate_feeds.py
 python3 scripts/check_manifest.py
 python3 scripts/sync_site_pages.py
 python3 scripts/generate_dashboard.py
+python3 scripts/generate_library_page.py
 python3 scripts/generate_transparency_page.py
 python3 scripts/generate_og_images.py
 python3 scripts/check_docs.py

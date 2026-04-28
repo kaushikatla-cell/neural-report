@@ -63,4 +63,43 @@ document.addEventListener("DOMContentLoaded", function () {
     if (archiveTag) archiveTag.addEventListener("change", applyArchiveFilters);
     applyArchiveFilters();
   }
+
+  var librarySearch = document.getElementById("library-search");
+  var librarySummary = document.getElementById("library-summary");
+  var libraryCards = Array.prototype.slice.call(document.querySelectorAll("#library-grid .paper-card"));
+  var domainButtons = Array.prototype.slice.call(document.querySelectorAll("[data-library-domain]"));
+  if (libraryCards.length > 0 && librarySummary) {
+    var activeDomain = "";
+    var updateDomainButtons = function () {
+      domainButtons.forEach(function (btn) {
+        var d = (btn.getAttribute("data-library-domain") || "").toLowerCase();
+        var on = d === activeDomain;
+        btn.classList.toggle("is-active", on);
+      });
+    };
+    var applyLibraryFilters = function () {
+      var q = (librarySearch && librarySearch.value ? librarySearch.value : "").trim().toLowerCase();
+      var visible = 0;
+      libraryCards.forEach(function (card) {
+        var title = (card.getAttribute("data-title") || "").toLowerCase();
+        var dom = (card.getAttribute("data-domain") || "").toLowerCase();
+        var text = (card.textContent || "").toLowerCase();
+        var matchesQ = !q || title.indexOf(q) !== -1 || text.indexOf(q) !== -1;
+        var matchesD = !activeDomain || dom === activeDomain;
+        var show = matchesQ && matchesD;
+        card.style.display = show ? "" : "none";
+        if (show) visible += 1;
+      });
+      librarySummary.textContent = "Showing " + visible + " source" + (visible === 1 ? "" : "s") + ".";
+      updateDomainButtons();
+    };
+    if (librarySearch) librarySearch.addEventListener("input", applyLibraryFilters);
+    domainButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        activeDomain = (btn.getAttribute("data-library-domain") || "").toLowerCase();
+        applyLibraryFilters();
+      });
+    });
+    applyLibraryFilters();
+  }
 });

@@ -82,6 +82,8 @@ def render() -> str:
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="archive.html">Archive</a>
+          <a href="library.html">Library</a>
+          <a href="faq.html">FAQ</a>
           <a href="dashboard.html">Dashboard</a>
           <a href="transparency.html" aria-current="page">Transparency</a>
           <a href="methodology.html">Methodology</a>
@@ -108,6 +110,12 @@ def render() -> str:
       <ul class="tight">
         {rows_html}
       </ul>
+      <p>
+        Also see:
+        <a href="dashboard.html">Dashboard</a> ·
+        <a href="library.html">Research library</a> ·
+        <a href="series.html">Series roadmap</a>.
+      </p>
     </main>
     <footer><a href="index.html">Home</a> · <a href="dashboard.html">Dashboard</a></footer>
     <script src="js/nrp-core.js" defer></script>

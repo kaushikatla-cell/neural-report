@@ -41,6 +41,26 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/library.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/faq.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/glossary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/series.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>

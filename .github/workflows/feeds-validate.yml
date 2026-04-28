@@ -27,6 +27,7 @@ jobs:
       - name: Generate dashboard and transparency pages
         run: |
           python3 scripts/generate_dashboard.py
+          python3 scripts/generate_library_page.py
           python3 scripts/generate_transparency_page.py
       - name: Regenerate OG images and sync brief meta
         run: python3 scripts/generate_og_images.py
@@ -35,7 +36,7 @@ jobs:
           git diff --stat
           mapfile -t og_pngs < <(find docs/images/og -name '*.png' 2>/dev/null | sort)
           git diff --exit-code docs/rss.xml docs/atom.xml docs/sitemap.xml \
-            docs/index.html docs/archive.html docs/dashboard.html docs/transparency.html \
+            docs/index.html docs/archive.html docs/dashboard.html docs/library.html docs/transparency.html \
             docs/images/og-default.png \
             "${og_pngs[@]}" \
             docs/briefs/*.html

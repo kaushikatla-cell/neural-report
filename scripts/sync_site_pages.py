@@ -25,11 +25,13 @@ def build_index_latest(briefs: list[dict], max_items: int = 5) -> str:
     lines = ["      <ul class=\"tight\">"]
     for b in briefs[:max_items]:
         href = f"briefs/{b['slug']}.html"
+        title = escape(b["title"])
+        summary = escape(b["summary"])
         lines.extend(
             [
                 "        <li>",
-                f"          <a href=\"{href}\"><strong>{b['title']}</strong></a>",
-                f"          — {b['summary']}",
+                f'          <a href="{escape(href)}"><strong>{title}</strong></a>',
+                f"          — {summary}",
                 "        </li>",
             ]
         )

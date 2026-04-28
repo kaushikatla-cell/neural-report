@@ -93,6 +93,8 @@ def render() -> str:
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="archive.html">Archive</a>
+          <a href="library.html">Library</a>
+          <a href="faq.html">FAQ</a>
           <a href="dashboard.html" aria-current="page">Dashboard</a>
           <a href="transparency.html">Transparency</a>
           <a href="methodology.html">Methodology</a>
@@ -141,7 +143,15 @@ def render() -> str:
       </table>
       <p>
         Source files: <code>metrics/monthly-dashboard.csv</code>,
-        <code>metrics/link-audit/latest.json</code>, <code>scripts/site-manifest.json</code>.
+        <code>metrics/link-audit/latest.json</code>, <code>scripts/site-manifest.json</code>,
+        <code>research/paper_library.csv</code>.
+      </p>
+      <p>
+        Supporting resources:
+        <a href="library.html">Research library</a> ·
+        <a href="faq.html">FAQ</a> ·
+        <a href="glossary.html">Glossary</a> ·
+        <a href="series.html">Series roadmap</a>
       </p>
     </main>
     <footer><a href="index.html">Home</a> · <a href="transparency.html">Transparency notes</a></footer>

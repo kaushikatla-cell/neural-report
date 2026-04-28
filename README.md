@@ -25,6 +25,9 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **Optional GA4** | [`docs/js/nrp-core.js`](docs/js/nrp-core.js) — see [`metrics/SETUP_ANALYTICS.md`](metrics/SETUP_ANALYTICS.md) |
 | **Published Evidence Briefs** | [`docs/briefs/`](docs/briefs/) — **5** shipped (Apr 27–May 25, 2026) |
 | **Public ops dashboard** | [`docs/dashboard.html`](docs/dashboard.html) (generated from manifest + metrics + link-audit) |
+| **Research library** | [`docs/library.html`](docs/library.html) (generated from [`research/paper_library.csv`](research/paper_library.csv)) |
+| **FAQ + glossary** | [`docs/faq.html`](docs/faq.html) · [`docs/glossary.html`](docs/glossary.html) |
+| **Series roadmap** | [`docs/series.html`](docs/series.html) |
 | **Transparency notes page** | [`docs/transparency.html`](docs/transparency.html) (generated from `metrics/transparency/*.md`) |
 | **PWA manifest** | [`docs/manifest.json`](docs/manifest.json) (Add to Home Screen / `theme-color`) |
 | **humans.txt** | [`docs/humans.txt`](docs/humans.txt) |
