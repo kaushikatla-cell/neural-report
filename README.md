@@ -8,23 +8,32 @@ Student-run editorial desk at the intersection of **AI** and **economics**: week
 
 **https://kaushikatla-cell.github.io/neural-report/**
 
-Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per `metrics/KPI_DEFINITIONS.md`).
+Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per [`metrics/KPI_DEFINITIONS.md`](metrics/KPI_DEFINITIONS.md)).
 
 ## Where everything lives
 
 | What | Path |
 |------|------|
-| **Public site (deployed)** | [`docs/`](docs/) — HTML/CSS served by GitHub Pages from `/docs` on `main` |
-| **Sample published brief** | [`docs/briefs/2026-04-27-has-gen-ai-raised-productivity.html`](docs/briefs/2026-04-27-has-gen-ai-raised-productivity.html) |
+| **Public site (deployed)** | [`docs/`](docs/) — GitHub Pages serves `/docs` on `main` |
+| **Subscribe / list growth** | [`docs/subscribe.html`](docs/subscribe.html) (wire Buttondown/Substack or Formspree) |
+| **Optional GA4** | [`docs/js/nrp-core.js`](docs/js/nrp-core.js) — see [`metrics/SETUP_ANALYTICS.md`](metrics/SETUP_ANALYTICS.md) |
+| **Published Evidence Briefs** | [`docs/briefs/`](docs/briefs/) — **4** shipped (Apr 27–May 18, 2026) |
 | **Brief template (HTML)** | [`docs/briefs/_template.html`](docs/briefs/_template.html) |
 | **Editorial spine** | [`EDITORIAL_SPINE.md`](EDITORIAL_SPINE.md) |
 | **Roles & decision rights** | [`COFOUNDER_ROLES.md`](COFOUNDER_ROLES.md) |
 | **Verifiable contribution log** | [`CONTRIBUTION_LOG.md`](CONTRIBUTION_LOG.md) |
+| **Application blurb** | [`APPLICATION_BLURB.md`](APPLICATION_BLURB.md) |
 | **Drafting checklist (Markdown)** | [`templates/evidence-brief-template.md`](templates/evidence-brief-template.md) |
-| **12-week cadence table** | [`templates/SERIES_12_WEEK_OUTLINE.md`](templates/SERIES_12_WEEK_OUTLINE.md) |
-| **Partnerships / syllabus / guests** | [`outreach/VALIDATION_PLAYBOOK.md`](outreach/VALIDATION_PLAYBOOK.md) |
+| **12-week ship plan** | [`templates/SERIES_12_WEEK_OUTLINE.md`](templates/SERIES_12_WEEK_OUTLINE.md) |
+| **Weeks 5–12 outlines** | [`drafts/WEEKS_05-12_OUTLINE.md`](drafts/WEEKS_05-12_OUTLINE.md) |
+| **Outreach templates** | [`outreach/VALIDATION_PLAYBOOK.md`](outreach/VALIDATION_PLAYBOOK.md) |
+| **Validation checklist (Tier-1 proof)** | [`outreach/VALIDATION_CHECKLIST.md`](outreach/VALIDATION_CHECKLIST.md) |
+| **Club + syllabus packets** | [`outreach/packets/`](outreach/packets/) |
+| **Guest pipeline CSV** | [`outreach/GUEST_PIPELINE.csv`](outreach/GUEST_PIPELINE.csv) |
 | **KPI definitions + CSV** | [`metrics/KPI_DEFINITIONS.md`](metrics/KPI_DEFINITIONS.md), [`metrics/monthly-dashboard.csv`](metrics/monthly-dashboard.csv) |
+| **GitHub traffic (no JS)** | [`metrics/GITHUB_TRAFFIC.md`](metrics/GITHUB_TRAFFIC.md) |
 | **Validation artifact drop folder** | [`outreach/artifacts/`](outreach/artifacts/) |
+| **Weekly ship issue template** | [`.github/ISSUE_TEMPLATE/evidence-brief.md`](.github/ISSUE_TEMPLATE/evidence-brief.md) |
 
 ## Repository
 
@@ -32,13 +41,13 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 
 ## Weekly workflow
 
-1. Copy [`templates/evidence-brief-template.md`](templates/evidence-brief-template.md) → `drafts/YYYY-MM-DD-slug.md` (create `drafts/` locally if needed).
+1. Copy [`templates/evidence-brief-template.md`](templates/evidence-brief-template.md) → `drafts/YYYY-MM-DD-slug.md`.
 2. Fact-check; publish HTML under `docs/briefs/` using [`docs/briefs/_template.html`](docs/briefs/_template.html).
-3. Add a row to [`docs/archive.html`](docs/archive.html); commit and push; post IG teaser linking to the live brief URL.
+3. Add a row to [`docs/archive.html`](docs/archive.html); update [`docs/index.html`](docs/index.html) “Latest”; commit and push; post IG teaser with UTM link.
 
 ## Custom domain (optional)
 
-In the repo: **Settings → Pages → Custom domain** (e.g. `neural.report`). Add the DNS records your registrar shows. Optionally add `docs/CNAME` with the hostname (GitHub can also commit CNAME automatically from Settings).
+Repo **Settings → Pages → Custom domain** (e.g. `neural.report`). Follow DNS instructions from GitHub / registrar.
 
 ## License
 

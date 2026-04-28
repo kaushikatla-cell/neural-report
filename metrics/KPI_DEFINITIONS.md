@@ -38,3 +38,7 @@ Per brief from Stories:
 1. On the last day of the month, fill one row in [monthly-dashboard.csv](monthly-dashboard.csv).
 2. Screenshot IG insights for that month → store in `metrics/screenshots/` (local, optional).
 3. 10-minute cofounder review: what moved, one experiment for next month.
+
+## Turning on web analytics
+
+See [SETUP_ANALYTICS.md](SETUP_ANALYTICS.md) (GA4) and [GITHUB_TRAFFIC.md](GITHUB_TRAFFIC.md) (repo Insights baseline).

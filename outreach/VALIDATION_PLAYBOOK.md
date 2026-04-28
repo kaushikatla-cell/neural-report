@@ -2,6 +2,12 @@
 
 Goal: **two or more** independent signals that NRP is used, cited, or partnered outside your own accounts.
 
+## Ready-to-send packets
+
+- Club one-pager + discussion guide: [`packets/club-partnership/`](packets/club-partnership/)
+- Syllabus snippet language: [`packets/syllabus-inclusion/SYLLABUS_SNIPPET.md`](packets/syllabus-inclusion/SYLLABUS_SNIPPET.md)
+- Master checklist: [`VALIDATION_CHECKLIST.md`](VALIDATION_CHECKLIST.md)
+
 ## Founding team (use in intros)
 
 | Name | Default lane when pitching |
