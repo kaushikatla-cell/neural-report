@@ -64,6 +64,7 @@ Bullets: data gaps, mixed literature, fast-moving policy, etc.
 - [ ] Links opened and not paywalled-only without note.
 - [ ] Co-founder read if material finance/policy claims.
 - [ ] `docs/archive.html` updated; corrections page unchanged unless fixing prior error.
+- [ ] `docs/rss.xml` + `docs/sitemap.xml` updated with the new brief URL (see `CONTRIBUTING.md`).
 
 ---
 
