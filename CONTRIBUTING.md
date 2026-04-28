@@ -8,7 +8,8 @@ NRP is a **co-founder–led** desk. External PRs are welcome for typos, broken l
 2. Draft using [`templates/evidence-brief-template.md`](templates/evidence-brief-template.md) and complete the checklist.
 3. Add `docs/briefs/YYYY-MM-DD-slug.html` (copy [`docs/briefs/_template.html`](docs/briefs/_template.html)).
 4. Update [`docs/archive.html`](docs/archive.html) and the “Latest” section on [`docs/index.html`](docs/index.html) if appropriate.
-5. Open a PR; **Divyam Gupta** (editorial lead) or a delegate approves merge after fact-check (**Kaushik Atla** lane).
+5. Add an `<entry>` to [`docs/rss.xml`](docs/rss.xml) and a `<url>` to [`docs/sitemap.xml`](docs/sitemap.xml) for the new brief (keeps syndication + SEO current).
+6. Open a PR; **Divyam Gupta** (editorial lead) or a delegate approves merge after fact-check (**Kaushik Atla** lane).
 
 ## House style
 

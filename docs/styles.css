@@ -155,3 +155,75 @@ code {
   border-radius: 4px;
   font-size: 0.88em;
 }
+
+/* Skip link (accessibility) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.75rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #0f1115;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline-color: var(--accent);
+}
+
+/* Print (teachers / clubs) */
+@media print {
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  header,
+  footer,
+  .skip-link,
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75rem;
+    color: #444;
+    word-break: break-all;
+  }
+
+  .badge {
+    background: #ddd;
+    color: #111;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}

@@ -4,9 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>[Title] — NRP Evidence Brief</title>
+    <meta name="description" content="[One-line summary for search + social]" />
+    <link
+      rel="canonical"
+      href="https://kaushikatla-cell.github.io/neural-report/briefs/YYYY-MM-DD-slug.html"
+    />
+    <link rel="alternate" type="application/rss+xml" title="Neural Report — Evidence Briefs" href="../rss.xml" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237dd3fc'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='11' font-weight='700' font-family='system-ui,sans-serif' fill='%230f1115'%3ENR%3C/text%3E%3C/svg%3E"
+    />
+    <meta property="og:site_name" content="Neural Report" />
+    <meta property="og:title" content="[Title]" />
+    <meta property="og:description" content="[One-line summary]" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kaushikatla-cell.github.io/neural-report/briefs/YYYY-MM-DD-slug.html" />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "[Title]",
+        "datePublished": "YYYY-MM-DD",
+        "author": [
+          { "@type": "Person", "name": "Divyam Gupta" },
+          { "@type": "Person", "name": "Kaushik Atla" },
+          { "@type": "Person", "name": "Shivam Pande" }
+        ],
+        "publisher": { "@type": "Organization", "name": "Neural Report" }
+      }
+    </script>
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header>
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="../index.html">NEURAL REPORT</a>
@@ -20,7 +51,7 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main id="main-content">
       <p class="badge">Evidence Brief</p>
       <h1>[Headline question]</h1>
       <p class="lead">
@@ -49,6 +80,12 @@
         <li>…</li>
       </ol>
     </main>
+    <p class="no-print" style="max-width: 900px; margin: 0 auto 1rem; padding: 0 1.25rem; font-size: 0.9rem; color: var(--muted); text-align: center">
+      <a href="https://github.com/kaushikatla-cell/neural-report/edit/main/docs/briefs/YYYY-MM-DD-slug.html"
+        >Edit on GitHub</a
+      >
+      <!-- After publish: also add <entry> to docs/rss.xml + url to docs/sitemap.xml -->
+    </p>
     <footer><a href="../archive.html">Archive</a> · <a href="../index.html">Home</a></footer>
     <script src="../js/nrp-core.js" defer></script>
   </body>

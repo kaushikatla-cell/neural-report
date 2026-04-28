@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://kaushikatla-cell.github.io/neural-report/sitemap.xml

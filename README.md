@@ -15,6 +15,10 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | What | Path |
 |------|------|
 | **Public site (deployed)** | [`docs/`](docs/) — GitHub Pages serves `/docs` on `main` |
+| **RSS (Atom) for briefs** | [`docs/rss.xml`](docs/rss.xml) |
+| **Sitemap** | [`docs/sitemap.xml`](docs/sitemap.xml) (also linked in [`docs/robots.txt`](docs/robots.txt)) |
+| **404 page** | [`docs/404.html`](docs/404.html) |
+| **Security disclosures** | [`SECURITY.md`](SECURITY.md) |
 | **Subscribe / list growth** | [`docs/subscribe.html`](docs/subscribe.html) (wire Buttondown/Substack or Formspree) |
 | **Optional GA4** | [`docs/js/nrp-core.js`](docs/js/nrp-core.js) — see [`metrics/SETUP_ANALYTICS.md`](metrics/SETUP_ANALYTICS.md) |
 | **Published Evidence Briefs** | [`docs/briefs/`](docs/briefs/) — **4** shipped (Apr 27–May 18, 2026) |
