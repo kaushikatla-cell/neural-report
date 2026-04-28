@@ -1,2 +1,3 @@
 # Dev / CI: OG image generation (Neural Report)
 Pillow>=10.0.0,<12
+requests>=2.31.0,<3

@@ -1,0 +1,185 @@
+{
+  "timestamp": "2026-04-28T01:29:53Z",
+  "summary": {
+    "total": 25,
+    "ok": 19,
+    "failed": 6
+  },
+  "results": [
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/blob/main/CONTRIBUTION_LOG.md"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/issues"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://instagram.com/neural.report"
+    },
+    {
+      "status_code": 403,
+      "ok": false,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.bls.gov/productivity/"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.imf.org/en/Publications/staff-discussion-notes/Issues/2024/01/14/Gen-AI-AI-and-the-Future-of-Work-542379"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.nber.org/papers/w31161"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/edit/main/docs/briefs/2026-04-27-has-gen-ai-raised-productivity.html"
+    },
+    {
+      "status_code": 403,
+      "ok": false,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.congress.gov/crs-product/R47523"
+    },
+    {
+      "status_code": 403,
+      "ok": false,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.congress.gov/crs-product/R47558"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/edit/main/docs/briefs/2026-05-04-what-did-the-chips-act-fund.html"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/edit/main/docs/briefs/2026-05-11-how-is-labor-productivity-measured.html"
+    },
+    {
+      "status_code": 403,
+      "ok": false,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.iea.org/reports/energy-and-ai"
+    },
+    {
+      "status_code": 403,
+      "ok": false,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/edit/main/docs/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.federalreserve.gov/faqs/what-economic-goals-does-federal-reserve-seek-to-achieve-through-monetary-policy.htm"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.federalreserve.gov/monetarypolicy/monetary-policy-strategy-tools-and-communications-statement-on-longer-run-goals-monetary-policy-strategy-2025.htm"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://www.federalreserve.gov/monetarypolicy/monetary-policy-what-are-its-goals-how-does-it-work.htm"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/edit/main/docs/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/edit/main/docs/briefs/YYYY-MM-DD-slug.html"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/blob/main/COFOUNDER_ROLES.md"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://github.com/kaushikatla-cell/neural-report/blob/main/LICENSE"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://blogtrottr.com/?subscribe=https%3A%2F%2Fkaushikatla-cell.github.io%2Fneural-report%2Frss.xml"
+    },
+    {
+      "status_code": 200,
+      "ok": true,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://buttondown.com"
+    },
+    {
+      "status_code": 403,
+      "ok": false,
+      "error": "",
+      "method": "HEAD",
+      "url": "https://web3forms.com"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Strict run: failing workflow = triage time (some .gov hosts block datacenter IPs).
 # Advisory checks stay in external-links.yml (continue-on-error).
-name: Citation freshness (strict external links)
+name: Citation freshness (strict + snapshots)
 
 on:
   workflow_dispatch:
@@ -8,11 +8,22 @@ on:
     - cron: "0 14 * * 3"
 
 jobs:
-  lychee-strict:
+  external-link-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check external URLs (fail job on dead links)
-        uses: lycheeverse/lychee-action@v1
+      - uses: actions/setup-python@v5
         with:
-          args: --config lychee.toml --no-progress './docs/**/*.html'
+          python-version: "3.12"
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Snapshot external links (strict)
+        run: python3 scripts/snapshot_external_links.py --strict
+      - name: Upload link-audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-audit-${{ github.run_id }}
+          path: |
+            metrics/link-audit/latest.json
+            metrics/link-audit/latest-delta.md
+            metrics/link-audit/snapshots/*.json

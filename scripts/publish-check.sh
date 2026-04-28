@@ -9,6 +9,8 @@ if ! python3 -c "import PIL" 2>/dev/null; then
 fi
 echo "==> python3 scripts/generate_feeds.py"
 python3 scripts/generate_feeds.py
+echo "==> python3 scripts/check_manifest.py"
+python3 scripts/check_manifest.py
 echo "==> python3 scripts/sync_site_pages.py"
 python3 scripts/sync_site_pages.py
 echo "==> python3 scripts/generate_og_images.py"
