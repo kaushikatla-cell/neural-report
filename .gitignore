@@ -1,0 +1,6 @@
+# Store redacted validation proofs in outreach/artifacts/
+# Uncomment the next line if you want artifacts only locally:
+# outreach/artifacts/*
+# !outreach/artifacts/.gitkeep
+
+metrics/screenshots/
