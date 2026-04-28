@@ -9,7 +9,8 @@ NRP is a **co-founder–led** desk. External PRs are welcome for typos, broken l
 3. Add `docs/briefs/YYYY-MM-DD-slug.html` (copy [`docs/briefs/_template.html`](docs/briefs/_template.html)).
 4. Update [`docs/archive.html`](docs/archive.html) and the “Latest” section on [`docs/index.html`](docs/index.html) if appropriate.
 5. Add an `<entry>` to [`docs/rss.xml`](docs/rss.xml) and a `<url>` to [`docs/sitemap.xml`](docs/sitemap.xml) for the new brief (keeps syndication + SEO current).
-6. Open a PR; **Divyam Gupta** (editorial lead) or a delegate approves merge after fact-check (**Kaushik Atla** lane).
+6. Run `python3 scripts/check_docs.py` from the repo root (or let **CI** on the PR run the same check).
+7. Open a PR; **Divyam Gupta** (editorial lead) or a delegate approves merge after fact-check (**Kaushik Atla** lane).
 
 ## House style
 
