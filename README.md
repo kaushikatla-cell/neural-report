@@ -24,6 +24,8 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **Subscribe / list growth** | [`docs/subscribe.html`](docs/subscribe.html) (RSS/Atom, RSS→email, Web3Forms, newsletter vendors) |
 | **Optional GA4** | [`docs/js/nrp-core.js`](docs/js/nrp-core.js) — see [`metrics/SETUP_ANALYTICS.md`](metrics/SETUP_ANALYTICS.md) |
 | **Published Evidence Briefs** | [`docs/briefs/`](docs/briefs/) — **5** shipped (Apr 27–May 25, 2026) |
+| **Public ops dashboard** | [`docs/dashboard.html`](docs/dashboard.html) (generated from manifest + metrics + link-audit) |
+| **Transparency notes page** | [`docs/transparency.html`](docs/transparency.html) (generated from `metrics/transparency/*.md`) |
 | **PWA manifest** | [`docs/manifest.json`](docs/manifest.json) (Add to Home Screen / `theme-color`) |
 | **humans.txt** | [`docs/humans.txt`](docs/humans.txt) |
 | **CI: internal link check** | [`.github/workflows/docs-check.yml`](.github/workflows/docs-check.yml) + [`scripts/check_docs.py`](scripts/check_docs.py) |
@@ -48,6 +50,7 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **Validation checklist (Tier-1 proof)** | [`outreach/VALIDATION_CHECKLIST.md`](outreach/VALIDATION_CHECKLIST.md) |
 | **Club + syllabus packets** | [`outreach/packets/`](outreach/packets/) |
 | **Guest pipeline CSV** | [`outreach/GUEST_PIPELINE.csv`](outreach/GUEST_PIPELINE.csv) |
+| **Outreach operating system** | [`outreach/OUTREACH_OPERATING_SYSTEM.md`](outreach/OUTREACH_OPERATING_SYSTEM.md) |
 | **KPI definitions + CSV** | [`metrics/KPI_DEFINITIONS.md`](metrics/KPI_DEFINITIONS.md), [`metrics/monthly-dashboard.csv`](metrics/monthly-dashboard.csv) |
 | **GitHub traffic (no JS)** | [`metrics/GITHUB_TRAFFIC.md`](metrics/GITHUB_TRAFFIC.md) |
 | **Validation artifact drop folder** | [`outreach/artifacts/`](outreach/artifacts/) |

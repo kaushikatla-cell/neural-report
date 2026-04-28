@@ -1,5 +1,5 @@
 # Neural Report — local checks (requires Python 3 + Pillow for og)
-.PHONY: manifest feeds sync og check quality snapshot-links bootstrap publish-check
+.PHONY: manifest feeds sync dashboard transparency og check quality snapshot-links bootstrap publish-check
 
 manifest:
 	python3 scripts/check_manifest.py
@@ -9,6 +9,12 @@ feeds:
 
 sync:
 	python3 scripts/sync_site_pages.py
+
+dashboard:
+	python3 scripts/generate_dashboard.py
+
+transparency:
+	python3 scripts/generate_transparency_page.py
 
 og:
 	python3 scripts/generate_og_images.py

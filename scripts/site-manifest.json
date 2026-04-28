@@ -48,6 +48,8 @@
     { "path": "methodology.html", "changefreq": "monthly", "priority": "0.8" },
     { "path": "corrections.html", "changefreq": "monthly", "priority": "0.6" },
     { "path": "about.html", "changefreq": "monthly", "priority": "0.7" },
-    { "path": "subscribe.html", "changefreq": "monthly", "priority": "0.75" }
+    { "path": "subscribe.html", "changefreq": "monthly", "priority": "0.75" },
+    { "path": "dashboard.html", "changefreq": "weekly", "priority": "0.65" },
+    { "path": "transparency.html", "changefreq": "monthly", "priority": "0.6" }
   ]
 }

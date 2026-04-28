@@ -12,9 +12,9 @@ bash scripts/publish-check.sh
 
 (or `make publish-check` if you use Make). Requires **Pillow**: `python3 -m pip install -r requirements.txt` once per machine.
 
-That runs **`generate_feeds.py`**, **`check_manifest.py`**, **`sync_site_pages.py`** (Latest + archive table), **`generate_og_images.py`** (brief cards + `docs/images/og-default.png`, syncs brief `og:image` tags), then **`check_docs.py`** + **`check_briefs.py`** so feeds/pages match [`scripts/site-manifest.json`](scripts/site-manifest.json), links resolve, and editorial structure stays consistent.
+That runs **`generate_feeds.py`**, **`check_manifest.py`**, **`sync_site_pages.py`** (Latest + archive table), **`generate_dashboard.py`**, **`generate_transparency_page.py`**, **`generate_og_images.py`** (brief cards + `docs/images/og-default.png`, syncs brief `og:image` tags), then **`check_docs.py`** + **`check_briefs.py`** so feeds/pages match [`scripts/site-manifest.json`](scripts/site-manifest.json), links resolve, and editorial structure stays consistent.
 
-Commit updated **`docs/rss.xml`**, **`docs/atom.xml`**, **`docs/sitemap.xml`**, **`docs/index.html`**, **`docs/archive.html`**, **`docs/images/og/*.png`**, **`docs/images/og-default.png`**, and any **`docs/briefs/*.html`** OG/meta changes after editing the manifest.
+Commit updated **`docs/rss.xml`**, **`docs/atom.xml`**, **`docs/sitemap.xml`**, **`docs/index.html`**, **`docs/archive.html`**, **`docs/dashboard.html`**, **`docs/transparency.html`**, **`docs/images/og/*.png`**, **`docs/images/og-default.png`**, and any **`docs/briefs/*.html`** OG/meta changes after editing the manifest.
 
 ## Publishing a new Evidence Brief
 
@@ -31,13 +31,15 @@ Commit updated **`docs/rss.xml`**, **`docs/atom.xml`**, **`docs/sitemap.xml`**, 
 
 6. **`python3 scripts/sync_site_pages.py`** — rebuilds homepage “Latest” and archive table from the manifest.
 
-7. **`python3 scripts/generate_og_images.py`** — writes `docs/images/og/{slug}.png` and syncs per-brief Open Graph / Twitter / JSON-LD image URLs. **Do not** hand-edit generated PNGs.
+7. **`python3 scripts/generate_dashboard.py`** + **`python3 scripts/generate_transparency_page.py`** — rebuild public ops pages from metrics + transparency notes.
 
-8. **`python3 scripts/check_docs.py`** and **`python3 scripts/check_briefs.py`** (included in `publish-check.sh`). CI runs **site-outputs validate** + link/editorial checks on `main`.
+8. **`python3 scripts/generate_og_images.py`** — writes `docs/images/og/{slug}.png` and syncs per-brief Open Graph / Twitter / JSON-LD image URLs. **Do not** hand-edit generated PNGs.
 
-9. **Custom domain:** run `python3 scripts/rewrite_site_base.py 'OLD_BASE' 'NEW_BASE'`, then re-run steps 5–6 and review the diff.
+9. **`python3 scripts/check_docs.py`** and **`python3 scripts/check_briefs.py`** (included in `publish-check.sh`). CI runs **site-outputs validate** + link/editorial checks on `main`.
 
-10. Open a PR. **Divyam Gupta** (editorial) or a delegate merges after fact-check (**Kaushik Atla** lane).
+10. **Custom domain:** run `python3 scripts/rewrite_site_base.py 'OLD_BASE' 'NEW_BASE'`, then re-run steps 5–8 and review the diff.
+
+11. Open a PR. **Divyam Gupta** (editorial) or a delegate merges after fact-check (**Kaushik Atla** lane).
 
 ## House style
 

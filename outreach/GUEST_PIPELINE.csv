@@ -1,11 +1,11 @@
-target_role,org_type,suggested_topic_angle,status,outreach_owner,notes
-Econ PhD student (labor),R1 university,Productivity measurement vs AI headlines,not_contacted,Shivam Pande,Ask advisor intro first
-Policy analyst (trade),think tank,Sovereign AI / export controls week 9,not_contacted,Shivam Pande,Cold email w/ 2 NRP briefs linked
-Fed research economist (RA program alum),Fed district bank,Max employment dashboard week 5,not_contacted,Kaushik Atla,Keep questions narrow + respectful
-Founder (B2B SaaS),startup <200 employees,Gen AI adoption + workflow redesign,not_contacted,Shivam Pande,15-min recorded Q&A
-HS econ teacher,public HS,Syllabus resource line,not_contacted,Divyam Gupta,Attach methodology URL
-Debate coach,HS policy debate,CHIPS / industrial policy brief,not_contacted,Shivam Pande,Offer discussion guide PDF
-CS club lead,HS or college,Data center energy / AI infra,not_contacted,Kaushik Atla,Pair with IEA brief
-Journalism student editor,college paper,Interview NRP founders,not_contacted,Shivam Pande,Press validation if published
-Local nonprofit (financial literacy),501(c)(3),Workshop using one brief,not_contacted,Divyam Gupta,Clear volunteer boundaries
-Prof (IO / antitrust),university,Algorithmic collusion week 6,not_contacted,Kaushik Atla,Send 4 written questions in advance
+target_role,org_type,suggested_topic_angle,status,outreach_owner,priority,last_contact_date,next_followup_date,validation_type,target_artifact,source_brief_slug,notes
+Econ PhD student (labor),R1 university,Productivity measurement vs AI headlines,not_contacted,Shivam Pande,high,,,guest_quote,published Q&A URL + calendar screenshot,2026-05-11-how-is-labor-productivity-measured,Ask advisor intro first
+Policy analyst (trade),think tank,Sovereign AI / export controls week 9,not_contacted,Shivam Pande,medium,,,press_mention,external newsletter mention screenshot,2026-05-04-what-did-the-chips-act-fund,Cold email with 2 NRP briefs linked
+Fed research economist (RA program alum),Fed district bank,Max employment dashboard week 5,not_contacted,Kaushik Atla,high,,,guest_quote,quoted response on brief update page,2026-05-25-what-does-maximum-employment-mean-for-the-fed,Keep questions narrow and respectful
+Founder (B2B SaaS),startup <200 employees,Gen AI adoption + workflow redesign,not_contacted,Shivam Pande,medium,,,guest_interview,recorded Q&A + summary brief URL,2026-04-27-has-gen-ai-raised-productivity,15-min recorded Q&A
+HS econ teacher,public HS,Syllabus resource line,not_contacted,Divyam Gupta,high,,,syllabus_inclusion,syllabus snippet PDF,2026-05-11-how-is-labor-productivity-measured,Attach methodology URL
+Debate coach,HS policy debate,CHIPS / industrial policy brief,not_contacted,Shivam Pande,medium,,,classroom_use,agenda photo + guide PDF,2026-05-04-what-did-the-chips-act-fund,Offer discussion guide PDF
+CS club lead,HS or college,Data center energy / AI infra,not_contacted,Kaushik Atla,medium,,,club_partnership,event announcement screenshot,2026-05-18-how-much-electricity-do-data-centers-use,Pair with IEA brief
+Journalism student editor,college paper,Interview NRP founders,not_contacted,Shivam Pande,low,,,press_mention,published article URL,2026-05-25-what-does-maximum-employment-mean-for-the-fed,Press validation if published
+Local nonprofit (financial literacy),501(c)(3),Workshop using one brief,not_contacted,Divyam Gupta,medium,,,workshop,attendance sheet or flyer,2026-05-11-how-is-labor-productivity-measured,Clear volunteer boundaries
+Prof (IO / antitrust),university,Algorithmic collusion week 6,not_contacted,Kaushik Atla,medium,,,guest_quote,email approval to quote + page URL,2026-05-04-what-did-the-chips-act-fund,Send 4 written questions in advance
