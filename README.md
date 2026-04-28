@@ -29,7 +29,7 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **CI: internal link check** | [`.github/workflows/docs-check.yml`](.github/workflows/docs-check.yml) + [`scripts/check_docs.py`](scripts/check_docs.py) |
 | **CI: feeds + pages + OG + sitemap = sources** | [`.github/workflows/feeds-validate.yml`](.github/workflows/feeds-validate.yml) + manifest + [`scripts/generate_feeds.py`](scripts/generate_feeds.py) + [`scripts/sync_site_pages.py`](scripts/sync_site_pages.py) + [`scripts/generate_og_images.py`](scripts/generate_og_images.py) |
 | **CI: external links (advisory)** | [`.github/workflows/external-links.yml`](.github/workflows/external-links.yml) + [`lychee.toml`](lychee.toml) |
-| **CI: citation freshness (strict + snapshots)** | [`.github/workflows/citation-freshness.yml`](.github/workflows/citation-freshness.yml) (scheduled Wednesdays; artifacts include deltas) |
+| **CI: citation freshness (strict + snapshots)** | [`.github/workflows/citation-freshness.yml`](.github/workflows/citation-freshness.yml) (scheduled Wednesdays; artifacts include deltas + auto issue on new failures) |
 | **Custom domain / base URL** | [`scripts/rewrite_site_base.py`](scripts/rewrite_site_base.py) |
 | **Social preview (site)** | [`docs/images/og-default.png`](docs/images/og-default.png) (1200×630; non-brief pages) |
 | **Social preview (briefs)** | [`docs/images/og/`](docs/images/og/) — one **1200×630** PNG per brief from [`scripts/generate_og_images.py`](scripts/generate_og_images.py) |

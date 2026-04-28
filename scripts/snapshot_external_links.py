@@ -5,6 +5,7 @@ Snapshot external link health from docs/*.html and report deltas over time.
 Outputs:
 - metrics/link-audit/latest.json
 - metrics/link-audit/latest-delta.md
+- metrics/link-audit/new-failures.json
 - metrics/link-audit/snapshots/<timestamp>.json
 """
 from __future__ import annotations
@@ -114,9 +115,20 @@ def write_delta_markdown(current: dict, previous: dict | None) -> None:
     (AUDIT_DIR / "latest-delta.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def compute_delta(current: dict, previous: dict | None) -> tuple[list[str], list[str]]:
+    cur_bad = {r["url"] for r in current["results"] if not r["ok"]}
+    prev_bad = set()
+    if previous:
+        prev_bad = {r["url"] for r in previous.get("results", []) if not r.get("ok", False)}
+    new_failures = sorted(cur_bad - prev_bad)
+    resolved = sorted(prev_bad - cur_bad)
+    return new_failures, resolved
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--strict", action="store_true", help="return non-zero when failures > 0")
+    parser.add_argument("--strict-new", action="store_true", help="return non-zero when new failures > 0")
     args = parser.parse_args()
 
     AUDIT_DIR.mkdir(parents=True, exist_ok=True)
@@ -138,17 +150,26 @@ def main() -> int:
     payload = {"timestamp": timestamp, "summary": summary, "results": results}
 
     previous = load_previous_latest()
+    new_failures, resolved = compute_delta(payload, previous)
+    payload["summary"]["new_failures"] = len(new_failures)
+    payload["summary"]["resolved_since_previous"] = len(resolved)
     (AUDIT_DIR / "latest.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (AUDIT_DIR / "new-failures.json").write_text(
+        json.dumps({"timestamp": timestamp, "new_failures": new_failures}, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
     snap_name = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S") + ".json"
     (SNAP_DIR / snap_name).write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_delta_markdown(payload, previous)
 
     print(
         f"snapshot_external_links: total={summary['total']} ok={summary['ok']} failed={summary['failed']} "
-        f"(wrote metrics/link-audit/latest.json, latest-delta.md, snapshots/{snap_name})"
+        f"new_failures={len(new_failures)} (wrote latest.json/new-failures.json/latest-delta.md/snapshots/{snap_name})"
     )
 
     if args.strict and summary["failed"] > 0:
+        return 1
+    if args.strict_new and len(new_failures) > 0:
         return 1
     return 0
 
