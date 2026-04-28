@@ -15,4 +15,4 @@ We will acknowledge reasonable reports within a few business days and coordinate
 
 ## Secrets
 
-Never commit API keys, Formspree secrets, or analytics tokens. GA4 measurement IDs in `docs/js/nrp-core.js` are **public by design** once set (they appear in browser traffic).
+Never commit API keys or analytics tokens. GA4 measurement IDs in `docs/js/nrp-core.js` are **public by design** once set (they appear in browser traffic). The Web3Forms **access key** in [`docs/subscribe.html`](docs/subscribe.html) is also public in HTML by design—use Web3Forms domain restrictions if spam becomes an issue.

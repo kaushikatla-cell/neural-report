@@ -4,3 +4,6 @@
 # !outreach/artifacts/.gitkeep
 
 metrics/screenshots/
+
+__pycache__/
+*.py[cod]

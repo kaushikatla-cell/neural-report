@@ -22,6 +22,13 @@
 - https://kaushikatla-cell.github.io/neural-report/methodology.html
 - https://kaushikatla-cell.github.io/neural-report/corrections.html
 
+## Subscribe (human readers)
+- https://kaushikatla-cell.github.io/neural-report/subscribe.html — open feeds, RSS-to-email pointers, optional Web3Forms contact.
+
+## Social preview assets
+- Non-brief pages: `/images/og-default.png` (1200×630).
+- Each Evidence Brief: `/images/og/{slug}.png` (1200×630), generated from the same manifest as the RSS/Atom feeds.
+
 ## Source repository
 - https://github.com/kaushikatla-cell/neural-report
 

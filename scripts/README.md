@@ -4,6 +4,8 @@
 |------|---------|
 | [`site-manifest.json`](site-manifest.json) | **Source of truth** for published briefs (title, date, summary, slug). |
 | [`generate_feeds.py`](generate_feeds.py) | Writes `docs/rss.xml` (RSS 2.0), `docs/atom.xml` (Atom), and `docs/sitemap.xml` from the manifest. Run after every manifest change. |
+| [`generate_og_images.py`](generate_og_images.py) | Renders **1200×630** PNGs: `docs/images/og/{slug}.png` + `docs/images/og-default.png`; syncs brief OG/Twitter/JSON-LD image URLs. Requires Pillow (`requirements.txt`). |
+| [`rewrite_site_base.py`](rewrite_site_base.py) | Replace GitHub Pages base URL with a custom domain (or reverse) across `docs/` + key config files. |
 | [`check_docs.py`](check_docs.py) | Verifies relative `href`s in `docs/` point to real files (no network). |
 
 ```bash
@@ -12,6 +14,7 @@ bash scripts/publish-check.sh
 # or: make publish-check
 
 python3 scripts/generate_feeds.py
+python3 scripts/generate_og_images.py
 python3 scripts/check_docs.py
 ```
 

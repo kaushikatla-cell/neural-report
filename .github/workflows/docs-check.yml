@@ -5,13 +5,15 @@ on:
     paths:
       - "docs/**"
       - "scripts/**"
+      - "requirements.txt"
       - ".github/workflows/docs-check.yml"
   pull_request:
     paths:
       - "docs/**"
       - "scripts/**"
+      - "requirements.txt"
       - ".github/workflows/docs-check.yml"
-  # site-manifest does not change hrefs, but generate_feeds is tested in feeds-validate.yml
+  # Manifest edits are validated in feeds-validate.yml (feeds + OG image outputs).
 
 jobs:
   internal-links:

@@ -21,15 +21,19 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **llms.txt / security.txt** | [`docs/llms.txt`](docs/llms.txt) · [`docs/.well-known/security.txt`](docs/.well-known/security.txt) |
 | **404 page** | [`docs/404.html`](docs/404.html) |
 | **Security disclosures** | [`SECURITY.md`](SECURITY.md) |
-| **Subscribe / list growth** | [`docs/subscribe.html`](docs/subscribe.html) (wire Buttondown/Substack or Formspree) |
+| **Subscribe / list growth** | [`docs/subscribe.html`](docs/subscribe.html) (RSS/Atom, RSS→email, Web3Forms, newsletter vendors) |
 | **Optional GA4** | [`docs/js/nrp-core.js`](docs/js/nrp-core.js) — see [`metrics/SETUP_ANALYTICS.md`](metrics/SETUP_ANALYTICS.md) |
 | **Published Evidence Briefs** | [`docs/briefs/`](docs/briefs/) — **5** shipped (Apr 27–May 25, 2026) |
 | **PWA manifest** | [`docs/manifest.json`](docs/manifest.json) (Add to Home Screen / `theme-color`) |
 | **humans.txt** | [`docs/humans.txt`](docs/humans.txt) |
 | **CI: internal link check** | [`.github/workflows/docs-check.yml`](.github/workflows/docs-check.yml) + [`scripts/check_docs.py`](scripts/check_docs.py) |
-| **CI: RSS + Atom + sitemap = manifest** | [`.github/workflows/feeds-validate.yml`](.github/workflows/feeds-validate.yml) + [`scripts/site-manifest.json`](scripts/site-manifest.json) + [`scripts/generate_feeds.py`](scripts/generate_feeds.py) |
+| **CI: feeds + OG + sitemap = sources** | [`.github/workflows/feeds-validate.yml`](.github/workflows/feeds-validate.yml) + manifest + [`scripts/generate_feeds.py`](scripts/generate_feeds.py) + [`scripts/generate_og_images.py`](scripts/generate_og_images.py) |
 | **CI: external links (advisory)** | [`.github/workflows/external-links.yml`](.github/workflows/external-links.yml) + [`lychee.toml`](lychee.toml) |
-| **Social preview image** | [`docs/images/og-default.png`](docs/images/og-default.png) (1536×1024; `og:image` on all pages) |
+| **CI: citation freshness (strict lychee)** | [`.github/workflows/citation-freshness.yml`](.github/workflows/citation-freshness.yml) (scheduled Wednesdays) |
+| **Custom domain / base URL** | [`scripts/rewrite_site_base.py`](scripts/rewrite_site_base.py) |
+| **Social preview (site)** | [`docs/images/og-default.png`](docs/images/og-default.png) (1200×630; non-brief pages) |
+| **Social preview (briefs)** | [`docs/images/og/`](docs/images/og/) — one **1200×630** PNG per brief from [`scripts/generate_og_images.py`](scripts/generate_og_images.py) |
+| **Python deps (OG generation)** | [`requirements.txt`](requirements.txt) (Pillow) |
 | **Script notes** | [`scripts/README.md`](scripts/README.md), [`Makefile`](Makefile) (`make publish-check`) |
 | **Brief template (HTML)** | [`docs/briefs/_template.html`](docs/briefs/_template.html) |
 | **Editorial spine** | [`EDITORIAL_SPINE.md`](EDITORIAL_SPINE.md) |

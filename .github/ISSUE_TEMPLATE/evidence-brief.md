@@ -15,7 +15,7 @@ labels: brief
 - [ ] Fact-check pass (Kaushik lane) + editorial pass (Divyam lane)
 - [ ] **`scripts/site-manifest.json`** — new `{ slug, title, date, summary }` (slug = filename without `.html`)
 - [ ] `docs/briefs/YYYY-MM-DD-slug.html` added (from `docs/briefs/_template.html`); meta + `og:*` filled
-- [ ] `python3 scripts/generate_feeds.py` run (or `bash scripts/publish-check.sh`) — commit `docs/rss.xml`, `docs/atom.xml`, `docs/sitemap.xml` if changed
+- [ ] `bash scripts/publish-check.sh` (or `generate_feeds.py` + `generate_og_images.py` + `check_docs.py`) — commit feeds, `docs/images/og/*.png`, `docs/images/og-default.png`, and brief OG meta if changed
 - [ ] `docs/archive.html` updated
 - [ ] `docs/index.html` “Latest” updated (if this week’s ship)
 - [ ] IG teaser scheduled (Shivam lane) with UTM link

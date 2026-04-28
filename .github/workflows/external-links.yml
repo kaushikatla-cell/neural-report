@@ -19,4 +19,5 @@ jobs:
         with:
           args: --config lychee.toml --no-progress './docs/**/*.html'
         continue-on-error: true
-        # Some .gov / .org endpoints block or throttle datacenter IPs; treat as advisory. Re-run locally: lychee --config lychee.toml './docs/**/*.html'
+        # Advisory schedule: failures do not block. For a failing (strict) run, see citation-freshness.yml (Wednesdays).
+        # Re-run locally: lychee --config lychee.toml './docs/**/*.html'
