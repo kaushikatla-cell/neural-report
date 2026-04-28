@@ -1,6 +1,6 @@
 # External link audit delta
 
-- Timestamp: `2026-04-28T02:01:40Z`
+- Timestamp: `2026-04-28T02:06:23Z`
 - Total URLs checked: **42**
 - Failures now: **10**
 - Previous failures: **10**

@@ -248,6 +248,33 @@ document.addEventListener("DOMContentLoaded", function () {
     wireCopyButton("copy-citation-apa", citationAPA);
     wireCopyButton("copy-citation-mla", citationMLA);
 
+    var densityBtns = [
+      document.getElementById("reader-density-default"),
+      document.getElementById("reader-density-compact"),
+      document.getElementById("reader-density-spacious"),
+    ].filter(Boolean);
+    var setDensity = function (mode) {
+      document.body.classList.remove("reader-compact", "reader-spacious");
+      if (mode === "compact") document.body.classList.add("reader-compact");
+      if (mode === "spacious") document.body.classList.add("reader-spacious");
+      try {
+        localStorage.setItem("nrp_reader_density", mode || "default");
+      } catch (e) {}
+      densityBtns.forEach(function (b) {
+        b.classList.toggle("is-active", b.getAttribute("data-density-mode") === (mode || "default"));
+      });
+    };
+    var storedDensity = "default";
+    try {
+      storedDensity = localStorage.getItem("nrp_reader_density") || "default";
+    } catch (e) {}
+    setDensity(storedDensity);
+    densityBtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        setDensity(b.getAttribute("data-density-mode") || "default");
+      });
+    });
+
     var bibBtn = document.getElementById("download-citation-bib");
     if (bibBtn) {
       bibBtn.addEventListener("click", function () {
@@ -312,6 +339,26 @@ document.addEventListener("DOMContentLoaded", function () {
           host = "";
         }
         var preview = (a.textContent || "External source").trim();
+        var badge = document.createElement("span");
+        badge.className = "source-badge";
+        if (
+          /(\.|^)(gov|edu)$/i.test(host) ||
+          host.indexOf("imf.org") !== -1 ||
+          host.indexOf("oecd.org") !== -1 ||
+          host.indexOf("federalreserve.gov") !== -1 ||
+          host.indexOf("bls.gov") !== -1 ||
+          host.indexOf("iea.org") !== -1
+        ) {
+          badge.classList.add("source-badge-high");
+          badge.textContent = "primary";
+        } else if (host.indexOf("nber.org") !== -1 || host.indexOf("arxiv.org") !== -1 || host.indexOf("stanford.edu") !== -1) {
+          badge.classList.add("source-badge-medium");
+          badge.textContent = "research";
+        } else {
+          badge.classList.add("source-badge-reference");
+          badge.textContent = "reference";
+        }
+        a.insertAdjacentElement("afterend", badge);
         a.addEventListener("mouseenter", function () {
           tooltip.textContent = preview + (host ? " — " + host : "");
           tooltip.classList.add("show");
@@ -325,5 +372,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     }
+
+    var gPressedAt = 0;
+    window.addEventListener("keydown", function (ev) {
+      if (ev.defaultPrevented || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+      var tag = (ev.target && ev.target.tagName) || "";
+      if (/INPUT|TEXTAREA|SELECT/.test(tag) || (ev.target && ev.target.isContentEditable)) return;
+      var key = (ev.key || "").toLowerCase();
+      if (key === "j") {
+        window.scrollBy({ top: 110, behavior: "smooth" });
+      } else if (key === "k") {
+        window.scrollBy({ top: -110, behavior: "smooth" });
+      } else if (key === "g") {
+        var now = Date.now();
+        if (now - gPressedAt < 450) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          gPressedAt = 0;
+        } else {
+          gPressedAt = now;
+        }
+      } else if (key === "s") {
+        if (Date.now() - gPressedAt < 800) {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+          gPressedAt = 0;
+        }
+      }
+    });
   }
 });
