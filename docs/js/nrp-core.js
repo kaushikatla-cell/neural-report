@@ -68,6 +68,148 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  var searchIndexPromise = null;
+  var loadSearchIndex = function () {
+    if (!searchIndexPromise) {
+      searchIndexPromise = fetch("/neural-report/search-index.json")
+        .then(function (r) {
+          return r.ok ? r.json() : { items: [] };
+        })
+        .catch(function () {
+          return { items: [] };
+        });
+    }
+    return searchIndexPromise;
+  };
+
+  var palette = document.createElement("div");
+  palette.className = "command-palette";
+  palette.innerHTML =
+    '<div class="command-panel">' +
+    '<input id="command-input" type="search" placeholder="Search briefs, library, pages... (Esc to close)" />' +
+    '<div id="command-results" class="command-results"></div>' +
+    "</div>";
+  document.body.appendChild(palette);
+  var commandInput = palette.querySelector("#command-input");
+  var commandResults = palette.querySelector("#command-results");
+  var activeIdx = -1;
+  var currentItems = [];
+
+  var scoreItem = function (q, item) {
+    if (!q) return 1;
+    var hay = ((item.title || "") + " " + (item.summary || "") + " " + (item.tags || []).join(" ")).toLowerCase();
+    if (hay.indexOf(q) === -1) return -1;
+    var s = 0;
+    if ((item.title || "").toLowerCase().indexOf(q) !== -1) s += 5;
+    if ((item.kind || "") === "brief") s += 2;
+    if ((item.tags || []).join(" ").toLowerCase().indexOf(q) !== -1) s += 2;
+    return s;
+  };
+
+  var renderCommandResults = function (items) {
+    currentItems = items.slice(0, 30);
+    activeIdx = currentItems.length ? 0 : -1;
+    if (!currentItems.length) {
+      commandResults.innerHTML = '<div class="command-item"><small>No matches.</small></div>';
+      return;
+    }
+    commandResults.innerHTML = currentItems
+      .map(function (it, i) {
+        var tags = (it.tags || []).slice(0, 4).join(", ");
+        return (
+          '<a class="command-item' +
+          (i === activeIdx ? " active" : "") +
+          '" href="' +
+          (it.url || "#") +
+          '">' +
+          (it.title || "Untitled") +
+          '<small>' +
+          (it.kind || "item") +
+          (tags ? " · " + tags : "") +
+          (it.summary ? " · " + it.summary : "") +
+          "</small></a>"
+        );
+      })
+      .join("");
+  };
+
+  var updateActive = function () {
+    var nodes = Array.prototype.slice.call(commandResults.querySelectorAll(".command-item"));
+    nodes.forEach(function (n, i) {
+      n.classList.toggle("active", i === activeIdx);
+    });
+    if (nodes[activeIdx] && nodes[activeIdx].scrollIntoView) {
+      nodes[activeIdx].scrollIntoView({ block: "nearest" });
+    }
+  };
+
+  var runCommandSearch = function () {
+    var q = (commandInput.value || "").trim().toLowerCase();
+    loadSearchIndex().then(function (idx) {
+      var items = (idx.items || [])
+        .map(function (it) {
+          return { it: it, score: scoreItem(q, it) };
+        })
+        .filter(function (x) {
+          return x.score >= 0;
+        })
+        .sort(function (a, b) {
+          return b.score - a.score;
+        })
+        .map(function (x) {
+          return x.it;
+        });
+      renderCommandResults(items);
+    });
+  };
+
+  var openPalette = function () {
+    palette.classList.add("open");
+    commandInput.value = "";
+    runCommandSearch();
+    window.setTimeout(function () {
+      commandInput.focus();
+    }, 10);
+  };
+
+  var closePalette = function () {
+    palette.classList.remove("open");
+  };
+
+  palette.addEventListener("click", function (ev) {
+    if (ev.target === palette) closePalette();
+  });
+  commandInput.addEventListener("input", runCommandSearch);
+  commandInput.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape") {
+      closePalette();
+    } else if (ev.key === "ArrowDown") {
+      ev.preventDefault();
+      if (currentItems.length) {
+        activeIdx = (activeIdx + 1) % currentItems.length;
+        updateActive();
+      }
+    } else if (ev.key === "ArrowUp") {
+      ev.preventDefault();
+      if (currentItems.length) {
+        activeIdx = (activeIdx - 1 + currentItems.length) % currentItems.length;
+        updateActive();
+      }
+    } else if (ev.key === "Enter" && activeIdx >= 0 && currentItems[activeIdx] && currentItems[activeIdx].url) {
+      window.location.href = currentItems[activeIdx].url;
+    }
+  });
+
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "palette-button no-print";
+    btn.textContent = "Search (/)";
+    btn.addEventListener("click", openPalette);
+    nav.appendChild(btn);
+  }
+
   var archiveSearch = document.getElementById("archive-search");
   var archiveTag = document.getElementById("archive-tag-filter");
   var archiveRows = Array.prototype.slice.call(document.querySelectorAll("#archive-table tbody tr.archive-row"));
@@ -373,6 +515,62 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    // Related-brief recommendations based on shared tags/keywords.
+    loadSearchIndex().then(function (idx) {
+      var slug = canonical.split("/").pop().replace(".html", "");
+      var items = (idx.items || []).filter(function (it) {
+        return it.kind === "brief";
+      });
+      var current = items.find(function (it) {
+        return it.slug === slug;
+      });
+      if (!current) return;
+      var curTags = (current.tags || []).map(function (t) {
+        return String(t).toLowerCase();
+      });
+      var scored = items
+        .filter(function (it) {
+          return it.slug !== slug;
+        })
+        .map(function (it) {
+          var tags = (it.tags || []).map(function (t) {
+            return String(t).toLowerCase();
+          });
+          var overlap = tags.filter(function (t) {
+            return curTags.indexOf(t) !== -1;
+          }).length;
+          var titleOverlap = 0;
+          var curWords = (current.title || "").toLowerCase().split(/\W+/).filter(Boolean);
+          var words = (it.title || "").toLowerCase().split(/\W+/).filter(Boolean);
+          curWords.forEach(function (w) {
+            if (w.length > 3 && words.indexOf(w) !== -1) titleOverlap += 1;
+          });
+          return { it: it, score: overlap * 5 + titleOverlap };
+        })
+        .sort(function (a, b) {
+          return b.score - a.score;
+        })
+        .slice(0, 3)
+        .filter(function (x) {
+          return x.score > 0;
+        })
+        .map(function (x) {
+          return x.it;
+        });
+      if (!scored.length) return;
+      var sec = document.createElement("section");
+      sec.className = "card";
+      sec.innerHTML =
+        "<h3>Related briefs</h3><ul class='tight'>" +
+        scored
+          .map(function (it) {
+            return "<li><a href='" + it.url + "'><strong>" + it.title + "</strong></a> — " + (it.summary || "") + "</li>";
+          })
+          .join("") +
+        "</ul>";
+      briefContent.appendChild(sec);
+    });
+
     var gPressedAt = 0;
     window.addEventListener("keydown", function (ev) {
       if (ev.defaultPrevented || ev.metaKey || ev.ctrlKey || ev.altKey) return;
@@ -399,4 +597,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  window.addEventListener("keydown", function (ev) {
+    if (ev.defaultPrevented || ev.altKey) return;
+    var tag = (ev.target && ev.target.tagName) || "";
+    var inEditable = /INPUT|TEXTAREA|SELECT/.test(tag) || (ev.target && ev.target.isContentEditable);
+    var key = (ev.key || "").toLowerCase();
+    if (!inEditable && (key === "/" || ((ev.metaKey || ev.ctrlKey) && key === "k"))) {
+      ev.preventDefault();
+      openPalette();
+      return;
+    }
+    if (key === "escape" && palette.classList.contains("open")) {
+      closePalette();
+    }
+  });
 });

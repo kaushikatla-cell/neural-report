@@ -17,6 +17,8 @@ echo "==> python3 scripts/generate_dashboard.py"
 python3 scripts/generate_dashboard.py
 echo "==> python3 scripts/generate_library_page.py"
 python3 scripts/generate_library_page.py
+echo "==> python3 scripts/generate_search_index.py"
+python3 scripts/generate_search_index.py
 echo "==> python3 scripts/generate_transparency_page.py"
 python3 scripts/generate_transparency_page.py
 echo "==> python3 scripts/generate_og_images.py"

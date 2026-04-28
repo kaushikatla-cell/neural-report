@@ -1,0 +1,439 @@
+{
+  "base_url": "https://kaushikatla-cell.github.io/neural-report",
+  "generated_from": [
+    "scripts/site-manifest.json",
+    "research/paper_library.csv",
+    "docs/*.html"
+  ],
+  "total_items": 37,
+  "items": [
+    {
+      "kind": "home",
+      "title": "Neural Report — AI & economics, explained clearly",
+      "summary": "Neural Report shares AI and economics news and breakthroughs in a simple, clear, evidence-first format.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/index.html",
+      "slug": "index",
+      "tags": [
+        "home"
+      ]
+    },
+    {
+      "kind": "archive",
+      "title": "Archive",
+      "summary": "Canonical archive of NRP Evidence Briefs on AI, economics, and policy.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/archive.html",
+      "slug": "archive",
+      "tags": [
+        "archive"
+      ]
+    },
+    {
+      "kind": "dashboard",
+      "title": "Dashboard",
+      "summary": "Public operating dashboard for Neural Report: publishing cadence, validation progress, and link-health status.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/dashboard.html",
+      "slug": "dashboard",
+      "tags": [
+        "dashboard"
+      ]
+    },
+    {
+      "kind": "transparency",
+      "title": "Transparency",
+      "summary": "Monthly transparency notes: what shipped, what changed, what was corrected, and what is next.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/transparency.html",
+      "slug": "transparency",
+      "tags": [
+        "transparency"
+      ]
+    },
+    {
+      "kind": "library",
+      "title": "Research Library",
+      "summary": "Curated paper and policy library for AI, labor, macro, energy, and governance evidence work.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/library.html",
+      "slug": "library",
+      "tags": [
+        "library"
+      ]
+    },
+    {
+      "kind": "faq",
+      "title": "FAQ",
+      "summary": "Frequently asked questions about methodology, sourcing, corrections, and operations at Neural Report.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/faq.html",
+      "slug": "faq",
+      "tags": [
+        "faq"
+      ]
+    },
+    {
+      "kind": "glossary",
+      "title": "Glossary",
+      "summary": "Working glossary for AI-economics terms used in Neural Report briefs.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/glossary.html",
+      "slug": "glossary",
+      "tags": [
+        "glossary"
+      ]
+    },
+    {
+      "kind": "series",
+      "title": "Series Roadmap",
+      "summary": "Signature series roadmap and upcoming Evidence Brief arcs at Neural Report.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/series.html",
+      "slug": "series",
+      "tags": [
+        "series"
+      ]
+    },
+    {
+      "kind": "methodology",
+      "title": "Methodology",
+      "summary": "How Neural Report chooses topics, cites sources, uses AI tools, and publishes corrections.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/methodology.html",
+      "slug": "methodology",
+      "tags": [
+        "methodology"
+      ]
+    },
+    {
+      "kind": "corrections",
+      "title": "Corrections",
+      "summary": "Corrections log for Neural Report Evidence Briefs.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/corrections.html",
+      "slug": "corrections",
+      "tags": [
+        "corrections"
+      ]
+    },
+    {
+      "kind": "about",
+      "title": "About",
+      "summary": "Team, mission, and open-source links for Neural Report — AI and economics Evidence Briefs.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/about.html",
+      "slug": "about",
+      "tags": [
+        "about"
+      ]
+    },
+    {
+      "kind": "subscribe",
+      "title": "Subscribe",
+      "summary": "RSS, Atom, RSS-to-email, and a contact form for NRP Evidence Briefs.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/subscribe.html",
+      "slug": "subscribe",
+      "tags": [
+        "subscribe"
+      ]
+    },
+    {
+      "kind": "brief",
+      "title": "What does “maximum employment” mean when the Fed says it?",
+      "summary": "Fed dual mandate, FOMC longer-run goals, and why maximum employment is not one fixed number.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html",
+      "slug": "2026-05-25-what-does-maximum-employment-mean-for-the-fed",
+      "date": "2026-05-25",
+      "tags": [
+        "Fed",
+        "dual mandate",
+        "labor",
+        "macro"
+      ]
+    },
+    {
+      "kind": "brief",
+      "title": "How much electricity do data centers use—and how much is “because of AI”?",
+      "summary": "IEA global outlook for data centre electricity, AI as a driver, and scenario uncertainty.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html",
+      "slug": "2026-05-18-how-much-electricity-do-data-centers-use",
+      "date": "2026-05-18",
+      "tags": [
+        "AI",
+        "energy",
+        "data centers",
+        "climate"
+      ]
+    },
+    {
+      "kind": "brief",
+      "title": "How is “labor productivity” actually measured?",
+      "summary": "BLS definitions: output per hour, sector coverage, and why headlines mislead.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-11-how-is-labor-productivity-measured.html",
+      "slug": "2026-05-11-how-is-labor-productivity-measured",
+      "date": "2026-05-11",
+      "tags": [
+        "BLS",
+        "measurement",
+        "productivity"
+      ]
+    },
+    {
+      "kind": "brief",
+      "title": "What did the CHIPS Act actually fund?",
+      "summary": "CRS-based map of CHIPS Division A appropriations and global context.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-04-what-did-the-chips-act-fund.html",
+      "slug": "2026-05-04-what-did-the-chips-act-fund",
+      "date": "2026-05-04",
+      "tags": [
+        "industrial policy",
+        "semiconductors",
+        "Congress"
+      ]
+    },
+    {
+      "kind": "brief",
+      "title": "Has generative AI already raised economy-wide productivity?",
+      "summary": "IMF, BLS, and micro-evidence with explicit falsifiers.",
+      "url": "https://kaushikatla-cell.github.io/neural-report/briefs/2026-04-27-has-gen-ai-raised-productivity.html",
+      "slug": "2026-04-27-has-gen-ai-raised-productivity",
+      "date": "2026-04-27",
+      "tags": [
+        "AI",
+        "productivity",
+        "labor",
+        "macro"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Gen-AI: Artificial Intelligence and the Future of Work",
+      "summary": "Macro framework for AI labor effects",
+      "url": "https://www.imf.org/en/Publications/staff-discussion-notes/Issues/2024/01/14/Gen-AI-AI-and-the-Future-of-Work-542379",
+      "slug": "gen-ai-artificial-intelligence-and-the-future-of-work",
+      "date": "2024",
+      "tags": [
+        "labor",
+        "IMF SDN"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Generative AI at Work",
+      "summary": "Canonical field evidence on worker assistance",
+      "url": "https://www.nber.org/papers/w31161",
+      "slug": "generative-ai-at-work",
+      "date": "2023",
+      "tags": [
+        "labor",
+        "NBER"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "The Impact of Generative AI on Critical Thinking",
+      "summary": "Useful for skill-development caveats",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking/",
+      "slug": "the-impact-of-generative-ai-on-critical-thinking",
+      "date": "2025",
+      "tags": [
+        "education",
+        "Microsoft Research"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Electricity 2024",
+      "summary": "Power-system baseline before AI demand scenarios",
+      "url": "https://www.iea.org/reports/electricity-2024",
+      "slug": "electricity-2024",
+      "date": "2024",
+      "tags": [
+        "energy",
+        "IEA"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Energy and AI",
+      "summary": "Most cited cross-sector synthesis for AI power use",
+      "url": "https://www.iea.org/reports/energy-and-ai",
+      "slug": "energy-and-ai",
+      "date": "2025",
+      "tags": [
+        "energy",
+        "IEA"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Productivity and Costs - Technical Information",
+      "summary": "Definition backbone for productivity claims",
+      "url": "https://www.bls.gov/productivity/",
+      "slug": "productivity-and-costs---technical-information",
+      "date": "2025",
+      "tags": [
+        "measurement",
+        "BLS"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Monetary Policy Strategy and Longer-Run Goals",
+      "summary": "Primary source for dual-mandate wording",
+      "url": "https://www.federalreserve.gov/monetarypolicy/monetary-policy-strategy-tools-and-communications-statement-on-longer-run-goals-monetary-policy-strategy-2025.htm",
+      "slug": "monetary-policy-strategy-and-longer-run-goals",
+      "date": "2025",
+      "tags": [
+        "macro",
+        "Federal Reserve"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "What Economic Goals Does the Federal Reserve Seek",
+      "summary": "Plain-language version of policy mandate",
+      "url": "https://www.federalreserve.gov/faqs/what-economic-goals-does-federal-reserve-seek-to-achieve-through-monetary-policy.htm",
+      "slug": "what-economic-goals-does-the-federal-reserve-seek",
+      "date": "2025",
+      "tags": [
+        "macro",
+        "Federal Reserve FAQ"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "CRS R47523 CHIPS and Science Act Appropriations",
+      "summary": "Appropriations map for CHIPS discussion",
+      "url": "https://www.congress.gov/crs-product/R47523",
+      "slug": "crs-r47523-chips-and-science-act-appropriations",
+      "date": "2023",
+      "tags": [
+        "policy",
+        "CRS"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "CRS R47558 CHIPS and Science Act Overview",
+      "summary": "Context for implementation debates",
+      "url": "https://www.congress.gov/crs-product/R47558",
+      "slug": "crs-r47558-chips-and-science-act-overview",
+      "date": "2023",
+      "tags": [
+        "policy",
+        "CRS"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "AI Index Report",
+      "summary": "Yearly benchmark compendium for AI progress claims",
+      "url": "https://aiindex.stanford.edu/report/",
+      "slug": "ai-index-report",
+      "date": "2025",
+      "tags": [
+        "ai systems",
+        "Stanford HAI"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Frontier Models Are Capable of In-Context Learning",
+      "summary": "Technical capability context for productivity debates",
+      "url": "https://www.anthropic.com/research/in-context-learning-and-induction-heads",
+      "slug": "frontier-models-are-capable-of-in-context-learning",
+      "date": "2023",
+      "tags": [
+        "ai systems",
+        "Anthropic"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "GPTs are GPTs: Labor Market Impact Potential",
+      "summary": "Task-exposure map used in many policy memos",
+      "url": "https://arxiv.org/abs/2303.10130",
+      "slug": "gpts-are-gpts-labor-market-impact-potential",
+      "date": "2023",
+      "tags": [
+        "labor",
+        "OpenAI"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "The Economics of Artificial Intelligence: An Agenda",
+      "summary": "Foundational framing for AI economics research",
+      "url": "https://www.nber.org/papers/w24928",
+      "slug": "the-economics-of-artificial-intelligence-an-agenda",
+      "date": "2019",
+      "tags": [
+        "macro",
+        "NBER"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Beyond AI Exposure: Which Tasks Are Actually Automated",
+      "summary": "Better granularity than job-title-only analysis",
+      "url": "https://www.oecd.org/en/publications/job-task-exposure-to-ai_88f352f1-en.html",
+      "slug": "beyond-ai-exposure-which-tasks-are-actually-automated",
+      "date": "2024",
+      "tags": [
+        "labor",
+        "OECD"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Digitalisation and Productivity",
+      "summary": "Cross-country measurement perspective",
+      "url": "https://www.oecd.org/en/topics/sub-issues/digitalisation-and-productivity.html",
+      "slug": "digitalisation-and-productivity",
+      "date": "2024",
+      "tags": [
+        "measurement",
+        "OECD"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Artificial Intelligence and Electricity Demand",
+      "summary": "US-focused technical demand modeling",
+      "url": "https://www.nrel.gov/docs/fy24osti/88469.pdf",
+      "slug": "artificial-intelligence-and-electricity-demand",
+      "date": "2024",
+      "tags": [
+        "energy",
+        "NREL"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "Assessing Risks from Algorithmic Decision Systems",
+      "summary": "Operational risk framing for AI deployment",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "slug": "assessing-risks-from-algorithmic-decision-systems",
+      "date": "2023",
+      "tags": [
+        "governance",
+        "NIST"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "AI and the Future of Work in the United States",
+      "summary": "Accessible synthesis for public-facing briefing",
+      "url": "https://www.brookings.edu/articles/generative-ai-the-american-worker-and-the-future-of-work/",
+      "slug": "ai-and-the-future-of-work-in-the-united-states",
+      "date": "2024",
+      "tags": [
+        "labor",
+        "Brookings"
+      ]
+    },
+    {
+      "kind": "paper",
+      "title": "The Global AI Vibrancy Tool",
+      "summary": "Country-level context for competition narratives",
+      "url": "https://hai.stanford.edu/ai-index/global-vibrancy-tool",
+      "slug": "the-global-ai-vibrancy-tool",
+      "date": "2025",
+      "tags": [
+        "ai systems",
+        "Stanford HAI"
+      ]
+    }
+  ]
+}
