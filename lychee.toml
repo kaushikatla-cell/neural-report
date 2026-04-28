@@ -1,0 +1,19 @@
+# https://github.com/lycheeverse/lychee
+# Run locally: lychee --config lychee.toml './docs/**/*.html'
+
+exclude_path = ["docs/404.html"]
+
+accept = ["200..204", "429"]
+
+exclude = [
+  "^https://formspree.io/",
+  "^https://buttondown.com",
+  "^mailto:",
+]
+
+retry_wait_time = 2
+max_retries = 2
+max_concurrency = 2
+timeout = 25
+
+user_agent = "Mozilla/5.0 (compatible; NeuralReportBot/1.0; +https://kaushikatla-cell.github.io/neural-report/)"

@@ -1,0 +1,22 @@
+name: External links (lychee)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 15 * * 1"
+  push:
+    paths:
+      - "docs/**"
+      - "lychee.toml"
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check external URLs in HTML
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --config lychee.toml --no-progress './docs/**/*.html'
+        continue-on-error: true
+        # Some .gov / .org endpoints block or throttle datacenter IPs; treat as advisory. Re-run locally: lychee --config lychee.toml './docs/**/*.html'

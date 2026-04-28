@@ -3,7 +3,7 @@
   <url>
     <loc>https://kaushikatla-cell.github.io/neural-report/</loc>
     <changefreq>weekly</changefreq>
-    <priority>1</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kaushikatla-cell.github.io/neural-report/archive.html</loc>
@@ -36,12 +36,7 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://kaushikatla-cell.github.io/neural-report/briefs/2026-04-27-has-gen-ai-raised-productivity.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-04-what-did-the-chips-act-fund.html</loc>
+    <loc>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -51,7 +46,12 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html</loc>
+    <loc>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-04-what-did-the-chips-act-fund.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/briefs/2026-04-27-has-gen-ai-raised-productivity.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

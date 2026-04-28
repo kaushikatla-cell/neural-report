@@ -2,7 +2,7 @@
   --bg: #0f1115;
   --surface: #161a22;
   --text: #e8eaef;
-  --muted: #9aa3b2;
+  --muted: #b4bcc8;
   --accent: #7dd3fc;
   --border: #2a3140;
   --link: #93c5fd;
@@ -48,6 +48,9 @@ header {
   letter-spacing: 0.04em;
   color: var(--text);
   text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .brand:hover {
@@ -66,6 +69,10 @@ header {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.95rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0;
 }
 
 .nav-links a:hover,
@@ -184,6 +191,11 @@ code {
 button:focus-visible,
 input:focus-visible {
   outline-color: var(--accent);
+}
+
+button[type="submit"],
+input[type="email"] {
+  min-height: 44px;
 }
 
 /* Print (teachers / clubs) */

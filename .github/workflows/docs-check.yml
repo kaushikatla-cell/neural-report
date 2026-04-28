@@ -11,6 +11,7 @@ on:
       - "docs/**"
       - "scripts/**"
       - ".github/workflows/docs-check.yml"
+  # site-manifest does not change hrefs, but generate_feeds is tested in feeds-validate.yml
 
 jobs:
   internal-links:

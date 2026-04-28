@@ -1,0 +1,19 @@
+name: Feeds match manifest
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerate RSS + sitemap from manifest
+        run: python3 scripts/generate_feeds.py
+      - name: Fail if generated files differ from commit
+        run: |
+          git diff --stat
+          git diff --exit-code docs/rss.xml docs/sitemap.xml

@@ -1,0 +1,48 @@
+{
+  "base_url": "https://kaushikatla-cell.github.io/neural-report",
+  "feed": {
+    "title": "Neural Report — Evidence Briefs",
+    "subtitle": "NRP Evidence Briefs on AI, economics, and policy (student editorial desk).",
+    "author_name": "Neural Report (Divyam Gupta, Kaushik Atla, Shivam Pande)"
+  },
+  "briefs": [
+    {
+      "slug": "2026-05-25-what-does-maximum-employment-mean-for-the-fed",
+      "title": "What does “maximum employment” mean when the Fed says it?",
+      "date": "2026-05-25",
+      "summary": "Fed dual mandate, FOMC longer-run goals, and why maximum employment is not one fixed number."
+    },
+    {
+      "slug": "2026-05-18-how-much-electricity-do-data-centers-use",
+      "title": "How much electricity do data centers use—and how much is “because of AI”?",
+      "date": "2026-05-18",
+      "summary": "IEA global outlook for data centre electricity, AI as a driver, and scenario uncertainty."
+    },
+    {
+      "slug": "2026-05-11-how-is-labor-productivity-measured",
+      "title": "How is “labor productivity” actually measured?",
+      "date": "2026-05-11",
+      "summary": "BLS definitions: output per hour, sector coverage, and why headlines mislead."
+    },
+    {
+      "slug": "2026-05-04-what-did-the-chips-act-fund",
+      "title": "What did the CHIPS Act actually fund?",
+      "date": "2026-05-04",
+      "summary": "CRS-based map of CHIPS Division A appropriations and global context."
+    },
+    {
+      "slug": "2026-04-27-has-gen-ai-raised-productivity",
+      "title": "Has generative AI already raised economy-wide productivity?",
+      "date": "2026-04-27",
+      "summary": "IMF, BLS, and micro-evidence with explicit falsifiers."
+    }
+  ],
+  "sitemap_static": [
+    { "path": "", "changefreq": "weekly", "priority": "1.0" },
+    { "path": "archive.html", "changefreq": "weekly", "priority": "0.9" },
+    { "path": "methodology.html", "changefreq": "monthly", "priority": "0.8" },
+    { "path": "corrections.html", "changefreq": "monthly", "priority": "0.6" },
+    { "path": "about.html", "changefreq": "monthly", "priority": "0.7" },
+    { "path": "subscribe.html", "changefreq": "monthly", "priority": "0.75" }
+  ]
+}
