@@ -22,6 +22,35 @@
 /* Keep GA block above separate from link hardening below. */
 
 document.addEventListener("DOMContentLoaded", function () {
+  var copyText = function (text, cb) {
+    if (!text) {
+      cb(false);
+      return;
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () {
+          cb(true);
+        },
+        function () {
+          cb(false);
+        }
+      );
+      return;
+    }
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      cb(true);
+    } catch (e) {
+      cb(false);
+    }
+  };
+
   document.querySelectorAll('a[href^="http"]').forEach(function (a) {
     try {
       var u = new URL(a.href);
@@ -148,42 +177,153 @@ document.addEventListener("DOMContentLoaded", function () {
     activate();
   }
 
-  var copyCitationBtn = document.getElementById("copy-citation");
-  if (copyCitationBtn) {
-    copyCitationBtn.addEventListener("click", function () {
-      var text = copyCitationBtn.getAttribute("data-citation") || "";
-      var finish = function (ok) {
-        copyCitationBtn.textContent = ok ? "Citation copied" : "Copy failed";
-        window.setTimeout(function () {
-          copyCitationBtn.textContent = "Copy citation";
-        }, 1600);
-      };
-      if (!text) {
-        finish(false);
-        return;
+  if (briefContent) {
+    var canonicalEl = document.querySelector('link[rel="canonical"]');
+    var canonical = canonicalEl ? canonicalEl.href : window.location.href;
+    var titleEl = document.querySelector('meta[property="og:title"]');
+    var title = titleEl ? titleEl.getAttribute("content") : document.title;
+    var ldScript = document.querySelector('script[type="application/ld+json"]');
+    var dateIso = "";
+    if (ldScript) {
+      try {
+        var ld = JSON.parse(ldScript.textContent || "{}");
+        dateIso = ld.datePublished || "";
+      } catch (e) {
+        dateIso = "";
       }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () {
-            finish(true);
-          },
-          function () {
-            finish(false);
-          }
-        );
-      } else {
-        try {
-          var ta = document.createElement("textarea");
-          ta.value = text;
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand("copy");
-          document.body.removeChild(ta);
-          finish(true);
-        } catch (e) {
-          finish(false);
+    }
+    var d = dateIso ? new Date(dateIso + "T00:00:00Z") : new Date();
+    var y = d.getUTCFullYear();
+    var m = d.toLocaleString("en-US", { month: "long", timeZone: "UTC" });
+    var mShort = d.toLocaleString("en-US", { month: "short", timeZone: "UTC" });
+    var day = String(d.getUTCDate()).padStart(2, "0");
+    var mm = String(d.getUTCMonth() + 1).padStart(2, "0");
+    var slug = canonical.split("/").pop().replace(".html", "");
+
+    var citationDefault =
+      'Neural Report, "' +
+      title +
+      '," NRP Evidence Brief, ' +
+      (dateIso || "") +
+      ", " +
+      canonical +
+      ".";
+    var citationAPA = "Neural Report. (" + y + ", " + m + " " + day + "). " + title + ". " + canonical;
+    var citationMLA = '"' + title + '." Neural Report, ' + day + " " + mShort + " " + y + ", " + canonical + ".";
+    var citationBib =
+      "@misc{" +
+      slug.replace(/[^a-zA-Z0-9_-]/g, "") +
+      ",\n" +
+      '  author = "{Neural Report}",\n' +
+      '  title = "{' +
+      title.replace(/[{}]/g, "") +
+      '}",\n' +
+      "  year = {" +
+      y +
+      "},\n" +
+      "  month = {" +
+      mm +
+      "},\n" +
+      '  howpublished = "{\\url{' +
+      canonical +
+      '}}",\n' +
+      '  note = "{NRP Evidence Brief}"\n' +
+      "}";
+
+    var wireCopyButton = function (id, text) {
+      var btn = document.getElementById(id);
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var original = btn.textContent;
+        copyText(text, function (ok) {
+          btn.textContent = ok ? "Copied" : "Copy failed";
+          window.setTimeout(function () {
+            btn.textContent = original;
+          }, 1400);
+        });
+      });
+    };
+
+    wireCopyButton("copy-citation", citationDefault);
+    wireCopyButton("copy-citation-apa", citationAPA);
+    wireCopyButton("copy-citation-mla", citationMLA);
+
+    var bibBtn = document.getElementById("download-citation-bib");
+    if (bibBtn) {
+      bibBtn.addEventListener("click", function () {
+        var blob = new Blob([citationBib], { type: "text/plain;charset=utf-8" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = slug + ".bib";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    }
+
+    var printBtn = document.getElementById("print-brief");
+    if (printBtn) {
+      printBtn.addEventListener("click", function () {
+        window.print();
+      });
+    }
+
+    var progress = document.createElement("div");
+    progress.className = "reading-progress no-print";
+    progress.innerHTML = "<span></span>";
+    document.body.appendChild(progress);
+    var progressFill = progress.querySelector("span");
+    var updateProgress = function () {
+      var rect = briefContent.getBoundingClientRect();
+      var full = briefContent.scrollHeight - window.innerHeight;
+      var scrolled = window.scrollY - (window.scrollY + rect.top);
+      var pct = full > 0 ? Math.max(0, Math.min(1, scrolled / full)) : 0;
+      progressFill.style.width = String(Math.round(pct * 100)) + "%";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+
+    var sourcesHeading = Array.prototype.slice
+      .call(briefContent.querySelectorAll("h2"))
+      .find(function (h) {
+        return (h.textContent || "").trim().toLowerCase().indexOf("sources") === 0;
+      });
+    if (sourcesHeading) {
+      var tooltip = document.createElement("div");
+      tooltip.className = "source-preview-tooltip";
+      document.body.appendChild(tooltip);
+      var links = [];
+      var node = sourcesHeading.nextElementSibling;
+      while (node && node.tagName !== "H2") {
+        if (node.querySelectorAll) {
+          links = links.concat(Array.prototype.slice.call(node.querySelectorAll('a[href^="http"]')));
         }
+        node = node.nextElementSibling;
       }
-    });
+      links.forEach(function (a) {
+        var href = a.getAttribute("href") || "";
+        var host = "";
+        try {
+          host = new URL(href).hostname.replace(/^www\./, "");
+        } catch (e) {
+          host = "";
+        }
+        var preview = (a.textContent || "External source").trim();
+        a.addEventListener("mouseenter", function () {
+          tooltip.textContent = preview + (host ? " — " + host : "");
+          tooltip.classList.add("show");
+        });
+        a.addEventListener("mousemove", function (ev) {
+          tooltip.style.left = ev.clientX + 14 + "px";
+          tooltip.style.top = ev.clientY + 14 + "px";
+        });
+        a.addEventListener("mouseleave", function () {
+          tooltip.classList.remove("show");
+        });
+      });
+    }
   }
 });

@@ -317,6 +317,46 @@ article.brief-main {
   border-color: var(--accent);
 }
 
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  z-index: 1500;
+  background: transparent;
+}
+
+.reading-progress > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(125, 211, 252, 0.55);
+}
+
+.source-preview-tooltip {
+  position: fixed;
+  max-width: 340px;
+  pointer-events: none;
+  z-index: 1600;
+  background: #0c1018;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.source-preview-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
