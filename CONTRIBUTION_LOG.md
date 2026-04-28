@@ -9,7 +9,7 @@ Each co-founder maintains **their own** section. Update monthly or after major m
 | Date | What I shipped | Proof (file / URL / metric) |
 |------|----------------|-----------------------------|
 | 2026-04-27 | Editorial pass + publish on first Evidence Brief | Same brief + `docs/archive.html` row |
-| 2026-05-04–2026-05-18 | Editorial pass on CHIPS, BLS measurement, and IEA energy briefs | `docs/briefs/2026-05-04-*.html` … `2026-05-18-*.html` |
+| 2026-05-04–2026-05-25 | Editorial pass on CHIPS, BLS, IEA, and Fed maximum-employment briefs | `docs/briefs/2026-05-04-*.html` … `2026-05-25-*.html` |
 
 ---
 
@@ -18,7 +18,7 @@ Each co-founder maintains **their own** section. Update monthly or after major m
 | Date | What I shipped | Proof (file / URL / metric) |
 |------|----------------|-----------------------------|
 | 2026-04-27 | Research lead + primary sources for first NRP Evidence Brief (productivity × gen-AI) | `docs/briefs/2026-04-27-has-gen-ai-raised-productivity.html` |
-| 2026-05-04–2026-05-18 | Research + sourcing for CHIPS CRS, BLS productivity definitions, IEA energy briefs; GA hook + subscribe scaffold | `docs/briefs/2026-05-04-*.html` … `2026-05-18-*.html`; `docs/js/nrp-core.js`; `docs/subscribe.html` |
+| 2026-05-04–2026-05-25 | Research + sourcing (CHIPS, BLS, IEA, Fed); site kit (GA hook, subscribe, PWA manifest, `check_docs.py`, link hardening) | `docs/briefs/`; `docs/manifest.json`; `scripts/check_docs.py` |
 
 ---
 

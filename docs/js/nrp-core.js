@@ -1,6 +1,5 @@
-/* Neural Report — optional site analytics (GA4). Safe no-op until configured. */
+/* Neural Report — optional GA4 (no-op until GA_MEASUREMENT_ID is set) */
 (function () {
-  // Create a GA4 web data stream for this site, then paste the Measurement ID (format G-XXXXXXXXXX).
   var GA_MEASUREMENT_ID = "";
 
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.indexOf("XXXX") !== -1) {
@@ -20,3 +19,23 @@
   s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
   document.head.appendChild(s);
 })();
+/* Keep GA block above separate from link hardening below. */
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    try {
+      var u = new URL(a.href);
+      if (u.origin !== window.location.origin) {
+        var parts = (a.getAttribute("rel") || "").split(/\s+/).filter(Boolean);
+        ["noopener", "noreferrer"].forEach(function (r) {
+          if (parts.indexOf(r) === -1) {
+            parts.push(r);
+          }
+        });
+        a.setAttribute("rel", parts.join(" "));
+      }
+    } catch (e) {
+      /* ignore invalid URLs */
+    }
+  });
+});

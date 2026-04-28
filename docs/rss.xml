@@ -4,11 +4,18 @@
   <subtitle>NRP Evidence Briefs on AI, economics, and policy (student editorial desk).</subtitle>
   <link href="https://kaushikatla-cell.github.io/neural-report/rss.xml" rel="self" />
   <link href="https://kaushikatla-cell.github.io/neural-report/" />
-  <updated>2026-05-18T12:00:00Z</updated>
+  <updated>2026-05-25T12:00:00Z</updated>
   <id>https://kaushikatla-cell.github.io/neural-report/</id>
   <author>
     <name>Neural Report (Divyam Gupta, Kaushik Atla, Shivam Pande)</name>
   </author>
+  <entry>
+    <title>What does “maximum employment” mean when the Fed says it?</title>
+    <link href="https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html" />
+    <id>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html</id>
+    <updated>2026-05-25T12:00:00Z</updated>
+    <summary>Fed dual mandate, FOMC longer-run goals, and why maximum employment is not one fixed number.</summary>
+  </entry>
   <entry>
     <title>How much electricity do data centers use—and how much is “because of AI”?</title>
     <link href="https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html" />

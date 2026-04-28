@@ -1,0 +1,21 @@
+name: Docs check
+
+on:
+  push:
+    paths:
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/docs-check.yml"
+  pull_request:
+    paths:
+      - "docs/**"
+      - "scripts/**"
+      - ".github/workflows/docs-check.yml"
+
+jobs:
+  internal-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify internal hrefs
+        run: python3 scripts/check_docs.py

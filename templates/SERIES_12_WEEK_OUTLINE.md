@@ -1,6 +1,6 @@
 # NRP Evidence Brief — 12-week ship plan
 
-Ship **one brief per week** for 12 weeks. **Weeks 1–4 are published** in `docs/briefs/`; **weeks 5–12** are queued (draft from `drafts/WEEKS_05-12_OUTLINE.md`).
+Ship **one brief per week** for 12 weeks. **Weeks 1–5 are published** in `docs/briefs/`; **weeks 6–12** are queued (draft from `drafts/WEEKS_05-12_OUTLINE.md`).
 
 | Week | Publish date | Question (working title) | Primary source type | Status |
 |------|--------------|--------------------------|---------------------|--------|
@@ -8,7 +8,7 @@ Ship **one brief per week** for 12 weeks. **Weeks 1–4 are published** in `docs
 | 2 | 2026-05-04 | What did the CHIPS Act actually fund? | CRS (R47523, R47558) | **Published** |
 | 3 | 2026-05-11 | How is “labor productivity” actually measured? | BLS methodology | **Published** |
 | 4 | 2026-05-18 | How much electricity do data centers use—and how much is “because of AI”? | IEA Energy and AI | **Published** |
-| 5 | 2026-05-25 | When the Fed says “maximum employment,” what indicators does it watch? | Fed SEP + BLS JOLTS | Draft |
+| 5 | 2026-05-25 | What does “maximum employment” mean when the Fed says it? | Fed FAQ + FOMC longer-run goals | **Published** |
 | 6 | 2026-06-01 | What is “algorithmic collusion,” and what do economists agree on? | FTC / DOJ materials + papers | Draft |
 | 7 | 2026-06-08 | How do large language models change white-collar work in studies vs. headlines? | O*NET + academic micro | Draft |
 | 8 | 2026-06-15 | **Uncertainty week:** What do we *not* know about AI’s effect on wage inequality? | Mixed literature review | Draft |

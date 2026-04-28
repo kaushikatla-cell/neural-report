@@ -21,7 +21,10 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **Security disclosures** | [`SECURITY.md`](SECURITY.md) |
 | **Subscribe / list growth** | [`docs/subscribe.html`](docs/subscribe.html) (wire Buttondown/Substack or Formspree) |
 | **Optional GA4** | [`docs/js/nrp-core.js`](docs/js/nrp-core.js) — see [`metrics/SETUP_ANALYTICS.md`](metrics/SETUP_ANALYTICS.md) |
-| **Published Evidence Briefs** | [`docs/briefs/`](docs/briefs/) — **4** shipped (Apr 27–May 18, 2026) |
+| **Published Evidence Briefs** | [`docs/briefs/`](docs/briefs/) — **5** shipped (Apr 27–May 25, 2026) |
+| **PWA manifest** | [`docs/manifest.json`](docs/manifest.json) (Add to Home Screen / `theme-color`) |
+| **humans.txt** | [`docs/humans.txt`](docs/humans.txt) |
+| **CI: internal link check** | [`.github/workflows/docs-check.yml`](.github/workflows/docs-check.yml) + [`scripts/check_docs.py`](scripts/check_docs.py) |
 | **Brief template (HTML)** | [`docs/briefs/_template.html`](docs/briefs/_template.html) |
 | **Editorial spine** | [`EDITORIAL_SPINE.md`](EDITORIAL_SPINE.md) |
 | **Roles & decision rights** | [`COFOUNDER_ROLES.md`](COFOUNDER_ROLES.md) |

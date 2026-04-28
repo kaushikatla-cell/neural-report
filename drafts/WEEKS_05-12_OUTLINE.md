@@ -2,13 +2,7 @@
 
 Use [`templates/evidence-brief-template.md`](../templates/evidence-brief-template.md). Replace sources before publish.
 
----
-
-## 2026-05-25 — Fed “maximum employment” indicators
-
-- **Question:** When the Fed says “maximum employment,” what indicators does it watch?
-- **Primary:** FOMC Statement / SEP; BLS JOLTS; prime-age EPOP.
-- **Claims:** (1) No single number defines max employment; (2) Chair emphasizes broad dashboard; (3) SEP dots are projections not commitments.
+**Week 5 (2026-05-25) is published:** [`docs/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html`](../docs/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html)
 
 ---
 
