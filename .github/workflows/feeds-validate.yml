@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Regenerate RSS + sitemap from manifest
+      - name: Regenerate RSS, Atom, and sitemap from manifest
         run: python3 scripts/generate_feeds.py
       - name: Fail if generated files differ from commit
         run: |
           git diff --stat
-          git diff --exit-code docs/rss.xml docs/sitemap.xml
+          git diff --exit-code docs/rss.xml docs/atom.xml docs/sitemap.xml
       - name: Validate internal HTML hrefs
         run: python3 scripts/check_docs.py

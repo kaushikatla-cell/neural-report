@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Regenerate docs/rss.xml and docs/sitemap.xml from scripts/site-manifest.json.
+Regenerate docs/rss.xml (RSS 2.0), docs/atom.xml (Atom 1.0), and docs/sitemap.xml
+from scripts/site-manifest.json.
 Run from repo root: python3 scripts/generate_feeds.py
 """
 from __future__ import annotations
 
 import json
-import os
-import sys
-from datetime import datetime
+from email.utils import formatdate
+from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -26,6 +26,44 @@ def brief_url(base: str, slug: str) -> str:
     return base + path
 
 
+def rss_pub_date(iso_date: str) -> str:
+    y, m, d = map(int, iso_date.split("-"))
+    dt = datetime(y, m, d, 12, 0, 0, tzinfo=timezone.utc)
+    return formatdate(dt.timestamp(), usegmt=True)
+
+
+def write_rss_feed(root: Path, m: dict) -> None:
+    base = m["base_url"].rstrip("/")
+    feed = m["feed"]
+    briefs = sorted(m["briefs"], key=lambda b: b["date"], reverse=True)
+    latest = briefs[0]["date"] if briefs else "1970-01-01"
+
+    lines = [
+        '<?xml version="1.0" encoding="utf-8"?>',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+        "  <channel>",
+        f"    <title>{escape(feed['title'])}</title>",
+        f"    <link>{escape(base + '/')}</link>",
+        f"    <description>{escape(feed['subtitle'])}</description>",
+        "    <language>en-us</language>",
+        f"    <lastBuildDate>{rss_pub_date(latest)}</lastBuildDate>",
+        f'    <atom:link href="{escape(base + "/rss.xml")}" rel="self" type="application/rss+xml" />',
+    ]
+    for b in briefs:
+        url = brief_url(base, b["slug"])
+        lines.append("    <item>")
+        lines.append(f"      <title>{escape(b['title'])}</title>")
+        lines.append(f"      <link>{escape(url)}</link>")
+        lines.append(f'      <guid isPermaLink="true">{escape(url)}</guid>')
+        lines.append(f"      <pubDate>{rss_pub_date(b['date'])}</pubDate>")
+        lines.append(f"      <description>{escape(b['summary'])}</description>")
+        lines.append("    </item>")
+    lines.extend(["  </channel>", "</rss>"])
+    out = root / "docs" / "rss.xml"
+    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(f"wrote {out.relative_to(root)}")
+
+
 def write_atom_feed(root: Path, m: dict) -> None:
     base = m["base_url"].rstrip("/")
     feed = m["feed"]
@@ -38,7 +76,7 @@ def write_atom_feed(root: Path, m: dict) -> None:
         '<feed xmlns="http://www.w3.org/2005/Atom">',
         f"  <title>{escape(feed['title'])}</title>",
         f"  <subtitle>{escape(feed['subtitle'])}</subtitle>",
-        f'  <link href="{escape(base + "/rss.xml")}" rel="self" />',
+        f'  <link href="{escape(base + "/atom.xml")}" rel="self" />',
         f'  <link href="{escape(base + "/")}" />',
         f"  <updated>{updated_ts}</updated>",
         f'  <id>{escape(base + "/")}</id>',
@@ -59,7 +97,7 @@ def write_atom_feed(root: Path, m: dict) -> None:
         lines.append("  </entry>")
 
     lines.append("</feed>")
-    out = root / "docs" / "rss.xml"
+    out = root / "docs" / "atom.xml"
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"wrote {out.relative_to(root)}")
 
@@ -90,6 +128,17 @@ def write_sitemap(root: Path, m: dict) -> None:
         lines.append("    <priority>0.85</priority>")
         lines.append("  </url>")
 
+    for path, cfreq, pri in (
+        ("rss.xml", "weekly", "0.35"),
+        ("atom.xml", "weekly", "0.35"),
+        ("llms.txt", "monthly", "0.25"),
+    ):
+        lines.append("  <url>")
+        lines.append(f"    <loc>{escape(base + '/' + path)}</loc>")
+        lines.append(f"    <changefreq>{cfreq}</changefreq>")
+        lines.append(f"    <priority>{pri}</priority>")
+        lines.append("  </url>")
+
     lines.append("</urlset>")
     out = root / "docs" / "sitemap.xml"
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -99,6 +148,7 @@ def write_sitemap(root: Path, m: dict) -> None:
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     m = load_manifest(root)
+    write_rss_feed(root, m)
     write_atom_feed(root, m)
     write_sitemap(root, m)
     return 0

@@ -3,7 +3,7 @@
 | File | Purpose |
 |------|---------|
 | [`site-manifest.json`](site-manifest.json) | **Source of truth** for published briefs (title, date, summary, slug). |
-| [`generate_feeds.py`](generate_feeds.py) | Writes `docs/rss.xml` and `docs/sitemap.xml` from the manifest. Run after every manifest change. |
+| [`generate_feeds.py`](generate_feeds.py) | Writes `docs/rss.xml` (RSS 2.0), `docs/atom.xml` (Atom), and `docs/sitemap.xml` from the manifest. Run after every manifest change. |
 | [`check_docs.py`](check_docs.py) | Verifies relative `href`s in `docs/` point to real files (no network). |
 
 ```bash

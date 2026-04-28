@@ -18,3 +18,15 @@
 ## Accessibility (Lighthouse-style)
 
 - Muted text color lightened in CSS for contrast; nav links and brand use **min-height 44px** touch targets; form controls use min-height 44px.
+- `prefers-reduced-motion: reduce` trims animation/transition duration; `color-scheme: dark` improves native controls in dark UI.
+
+## Syndication (RSS + Atom)
+
+- **`docs/rss.xml`** — RSS 2.0 with `atom:link` self reference (for readers that expect classic RSS).
+- **`docs/atom.xml`** — Atom 1.0 (preferred by some aggregators and tooling).
+- Both are generated only from **`scripts/site-manifest.json`** via `scripts/generate_feeds.py`; CI fails on drift.
+
+## Discovery for AI tools
+
+- **`docs/llms.txt`** — short usage note + links to methodology and feeds (optional convention for model-facing context).
+- **`docs/.well-known/security.txt`** — security contact per [securitytxt.org](https://securitytxt.org/).

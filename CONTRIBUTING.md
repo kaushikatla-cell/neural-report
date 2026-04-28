@@ -10,9 +10,9 @@ From the repo root:
 bash scripts/publish-check.sh
 ```
 
-(or `make publish-check` if you use Make). That runs **`generate_feeds.py`** then **`check_docs.py`** so RSS/sitemap match [`scripts/site-manifest.json`](scripts/site-manifest.json) and relative links resolve.
+(or `make publish-check` if you use Make). That runs **`generate_feeds.py`** then **`check_docs.py`** so **RSS 2.0** (`docs/rss.xml`), **Atom** (`docs/atom.xml`), and **`docs/sitemap.xml`** match [`scripts/site-manifest.json`](scripts/site-manifest.json) and relative links resolve.
 
-Commit any updated **`docs/rss.xml`** / **`docs/sitemap.xml`** after editing the manifest.
+Commit any updated **`docs/rss.xml`**, **`docs/atom.xml`**, and **`docs/sitemap.xml`** after editing the manifest.
 
 ## Publishing a new Evidence Brief
 
@@ -24,7 +24,7 @@ Commit any updated **`docs/rss.xml`** / **`docs/sitemap.xml`** after editing the
 
 4. Add `docs/briefs/YYYY-MM-DD-slug.html` — copy [`docs/briefs/_template.html`](docs/briefs/_template.html), set `title`, `description`, canonical URL, and byline. The template includes **og:image**; the default share image is [`docs/images/og-default.png`](docs/images/og-default.png). If you **replace** that file and its pixel size changes, update every page’s `og:image:width` / `og:image:height` (see [`metrics/LINK_AND_UX.md`](metrics/LINK_AND_UX.md)).
 
-5. **`python3 scripts/generate_feeds.py`** — refreshes [`docs/rss.xml`](docs/rss.xml) and [`docs/sitemap.xml`](docs/sitemap.xml). **Do not** hand-edit those two files.
+5. **`python3 scripts/generate_feeds.py`** — refreshes [`docs/rss.xml`](docs/rss.xml), [`docs/atom.xml`](docs/atom.xml), and [`docs/sitemap.xml`](docs/sitemap.xml). **Do not** hand-edit those three files.
 
 6. Update [`docs/archive.html`](docs/archive.html) and the “Latest” section on [`docs/index.html`](docs/index.html) if this is a new public ship.
 

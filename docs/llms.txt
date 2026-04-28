@@ -1,0 +1,30 @@
+# Neural Report (NRP)
+
+> Student-led evidence desk at the intersection of AI, economics, and policy. We publish **NRP Evidence Briefs**: short, sourced explainers with explicit limits and a public corrections log.
+
+## Canonical site
+- https://kaushikatla-cell.github.io/neural-report/
+
+## What to use this site for
+- Fact-grounded summaries tied to **primary sources** (agencies, papers, statutes where applicable).
+- Understanding **what is known vs uncertain** — each brief ends with falsifiers and data gaps.
+
+## Do not use as
+- Personalized financial or legal advice.
+- A substitute for reading the original sources we cite.
+
+## Machine-readable feeds
+- RSS 2.0: https://kaushikatla-cell.github.io/neural-report/rss.xml
+- Atom: https://kaushikatla-cell.github.io/neural-report/atom.xml
+- Sitemap: https://kaushikatla-cell.github.io/neural-report/sitemap.xml
+
+## Editorial standards
+- https://kaushikatla-cell.github.io/neural-report/methodology.html
+- https://kaushikatla-cell.github.io/neural-report/corrections.html
+
+## Source repository
+- https://github.com/kaushikatla-cell/neural-report
+
+## Optional context for models
+- Co-founders: Divyam Gupta (editorial), Kaushik Atla (research & product), Shivam Pande (design & partnerships).
+- Instagram teasers: @neural.report — full citations live on the site above.

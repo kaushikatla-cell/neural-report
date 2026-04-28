@@ -15,8 +15,10 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | What | Path |
 |------|------|
 | **Public site (deployed)** | [`docs/`](docs/) — GitHub Pages serves `/docs` on `main` |
-| **RSS (Atom) for briefs** | [`docs/rss.xml`](docs/rss.xml) |
+| **RSS 2.0 feed** | [`docs/rss.xml`](docs/rss.xml) |
+| **Atom feed** | [`docs/atom.xml`](docs/atom.xml) |
 | **Sitemap** | [`docs/sitemap.xml`](docs/sitemap.xml) (also linked in [`docs/robots.txt`](docs/robots.txt)) |
+| **llms.txt / security.txt** | [`docs/llms.txt`](docs/llms.txt) · [`docs/.well-known/security.txt`](docs/.well-known/security.txt) |
 | **404 page** | [`docs/404.html`](docs/404.html) |
 | **Security disclosures** | [`SECURITY.md`](SECURITY.md) |
 | **Subscribe / list growth** | [`docs/subscribe.html`](docs/subscribe.html) (wire Buttondown/Substack or Formspree) |
@@ -25,9 +27,9 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **PWA manifest** | [`docs/manifest.json`](docs/manifest.json) (Add to Home Screen / `theme-color`) |
 | **humans.txt** | [`docs/humans.txt`](docs/humans.txt) |
 | **CI: internal link check** | [`.github/workflows/docs-check.yml`](.github/workflows/docs-check.yml) + [`scripts/check_docs.py`](scripts/check_docs.py) |
-| **CI: RSS / sitemap = manifest** | [`.github/workflows/feeds-validate.yml`](.github/workflows/feeds-validate.yml) + [`scripts/site-manifest.json`](scripts/site-manifest.json) + [`scripts/generate_feeds.py`](scripts/generate_feeds.py) |
+| **CI: RSS + Atom + sitemap = manifest** | [`.github/workflows/feeds-validate.yml`](.github/workflows/feeds-validate.yml) + [`scripts/site-manifest.json`](scripts/site-manifest.json) + [`scripts/generate_feeds.py`](scripts/generate_feeds.py) |
 | **CI: external links (advisory)** | [`.github/workflows/external-links.yml`](.github/workflows/external-links.yml) + [`lychee.toml`](lychee.toml) |
-| **Social preview image** | [`docs/images/og-default.png`](docs/images/og-default.png) (1200×630; `og:image` on all pages) |
+| **Social preview image** | [`docs/images/og-default.png`](docs/images/og-default.png) (1536×1024; `og:image` on all pages) |
 | **Script notes** | [`scripts/README.md`](scripts/README.md), [`Makefile`](Makefile) (`make publish-check`) |
 | **Brief template (HTML)** | [`docs/briefs/_template.html`](docs/briefs/_template.html) |
 | **Editorial spine** | [`EDITORIAL_SPINE.md`](EDITORIAL_SPINE.md) |

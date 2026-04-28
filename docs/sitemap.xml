@@ -55,4 +55,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/rss.xml</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/atom.xml</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://kaushikatla-cell.github.io/neural-report/llms.txt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.25</priority>
+  </url>
 </urlset>

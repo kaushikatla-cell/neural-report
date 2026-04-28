@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Neural Report — Evidence Briefs</title>
+  <subtitle>NRP Evidence Briefs on AI, economics, and policy (student editorial desk).</subtitle>
+  <link href="https://kaushikatla-cell.github.io/neural-report/atom.xml" rel="self" />
+  <link href="https://kaushikatla-cell.github.io/neural-report/" />
+  <updated>2026-05-25T12:00:00Z</updated>
+  <id>https://kaushikatla-cell.github.io/neural-report/</id>
+  <author>
+    <name>Neural Report (Divyam Gupta, Kaushik Atla, Shivam Pande)</name>
+  </author>
+  <entry>
+    <title>What does “maximum employment” mean when the Fed says it?</title>
+    <link href="https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html" />
+    <id>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-25-what-does-maximum-employment-mean-for-the-fed.html</id>
+    <updated>2026-05-25T12:00:00Z</updated>
+    <summary>Fed dual mandate, FOMC longer-run goals, and why maximum employment is not one fixed number.</summary>
+  </entry>
+  <entry>
+    <title>How much electricity do data centers use—and how much is “because of AI”?</title>
+    <link href="https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html" />
+    <id>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-18-how-much-electricity-do-data-centers-use.html</id>
+    <updated>2026-05-18T12:00:00Z</updated>
+    <summary>IEA global outlook for data centre electricity, AI as a driver, and scenario uncertainty.</summary>
+  </entry>
+  <entry>
+    <title>How is “labor productivity” actually measured?</title>
+    <link href="https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-11-how-is-labor-productivity-measured.html" />
+    <id>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-11-how-is-labor-productivity-measured.html</id>
+    <updated>2026-05-11T12:00:00Z</updated>
+    <summary>BLS definitions: output per hour, sector coverage, and why headlines mislead.</summary>
+  </entry>
+  <entry>
+    <title>What did the CHIPS Act actually fund?</title>
+    <link href="https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-04-what-did-the-chips-act-fund.html" />
+    <id>https://kaushikatla-cell.github.io/neural-report/briefs/2026-05-04-what-did-the-chips-act-fund.html</id>
+    <updated>2026-05-04T12:00:00Z</updated>
+    <summary>CRS-based map of CHIPS Division A appropriations and global context.</summary>
+  </entry>
+  <entry>
+    <title>Has generative AI already raised economy-wide productivity?</title>
+    <link href="https://kaushikatla-cell.github.io/neural-report/briefs/2026-04-27-has-gen-ai-raised-productivity.html" />
+    <id>https://kaushikatla-cell.github.io/neural-report/briefs/2026-04-27-has-gen-ai-raised-productivity.html</id>
+    <updated>2026-04-27T12:00:00Z</updated>
+    <summary>IMF, BLS, and micro-evidence with explicit falsifiers.</summary>
+  </entry>
+</feed>
