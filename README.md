@@ -28,7 +28,7 @@ Set Instagram `@neural.report` bio URL to the homepage (optionally with UTMs per
 | **CI: RSS / sitemap = manifest** | [`.github/workflows/feeds-validate.yml`](.github/workflows/feeds-validate.yml) + [`scripts/site-manifest.json`](scripts/site-manifest.json) + [`scripts/generate_feeds.py`](scripts/generate_feeds.py) |
 | **CI: external links (advisory)** | [`.github/workflows/external-links.yml`](.github/workflows/external-links.yml) + [`lychee.toml`](lychee.toml) |
 | **Social preview image** | [`docs/images/og-default.png`](docs/images/og-default.png) (1200×630; `og:image` on all pages) |
-| **Script notes** | [`scripts/README.md`](scripts/README.md) |
+| **Script notes** | [`scripts/README.md`](scripts/README.md), [`Makefile`](Makefile) (`make publish-check`) |
 | **Brief template (HTML)** | [`docs/briefs/_template.html`](docs/briefs/_template.html) |
 | **Editorial spine** | [`EDITORIAL_SPINE.md`](EDITORIAL_SPINE.md) |
 | **Roles & decision rights** | [`COFOUNDER_ROLES.md`](COFOUNDER_ROLES.md) |

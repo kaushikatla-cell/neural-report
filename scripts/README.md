@@ -7,7 +7,10 @@
 | [`check_docs.py`](check_docs.py) | Verifies relative `href`s in `docs/` point to real files (no network). |
 
 ```bash
-# from repository root
+# from repository root (recommended before every PR)
+bash scripts/publish-check.sh
+# or: make publish-check
+
 python3 scripts/generate_feeds.py
 python3 scripts/check_docs.py
 ```

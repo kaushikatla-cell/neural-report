@@ -17,3 +17,5 @@ jobs:
         run: |
           git diff --stat
           git diff --exit-code docs/rss.xml docs/sitemap.xml
+      - name: Validate internal HTML hrefs
+        run: python3 scripts/check_docs.py
