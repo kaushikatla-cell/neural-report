@@ -102,4 +102,88 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     applyLibraryFilters();
   }
+
+  var briefContent = document.querySelector(".brief-content");
+  var briefToc = document.querySelector(".brief-toc");
+  if (briefContent && briefToc) {
+    var h2s = Array.prototype.slice.call(briefContent.querySelectorAll("h2"));
+    var norm = function (s) {
+      return (s || "")
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, "")
+        .trim()
+        .replace(/\s+/g, "-");
+    };
+    h2s.forEach(function (h) {
+      var txt = (h.textContent || "").trim().toLowerCase();
+      if (txt.indexOf("tl;dr") === 0 || txt.indexOf("tl") === 0) {
+        h.id = "tldr";
+      } else if (txt.indexOf("claims and evidence") === 0) {
+        h.id = "claims-and-evidence";
+      } else if (txt.indexOf("still uncertain because") === 0) {
+        h.id = "still-uncertain-because";
+      } else if (txt.indexOf("sources") === 0) {
+        h.id = "sources";
+      } else if (!h.id) {
+        h.id = norm(h.textContent);
+      }
+    });
+    var tocLinks = Array.prototype.slice.call(briefToc.querySelectorAll("a[href^='#']"));
+    var byId = {};
+    tocLinks.forEach(function (a) {
+      var id = (a.getAttribute("href") || "").replace(/^#/, "");
+      if (id) byId[id] = a;
+    });
+    var activate = function () {
+      var y = window.scrollY + 120;
+      var current = "";
+      h2s.forEach(function (h) {
+        if (h.offsetTop <= y) current = h.id;
+      });
+      tocLinks.forEach(function (a) {
+        a.classList.toggle("active", a === byId[current]);
+      });
+    };
+    window.addEventListener("scroll", activate, { passive: true });
+    activate();
+  }
+
+  var copyCitationBtn = document.getElementById("copy-citation");
+  if (copyCitationBtn) {
+    copyCitationBtn.addEventListener("click", function () {
+      var text = copyCitationBtn.getAttribute("data-citation") || "";
+      var finish = function (ok) {
+        copyCitationBtn.textContent = ok ? "Citation copied" : "Copy failed";
+        window.setTimeout(function () {
+          copyCitationBtn.textContent = "Copy citation";
+        }, 1600);
+      };
+      if (!text) {
+        finish(false);
+        return;
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () {
+            finish(true);
+          },
+          function () {
+            finish(false);
+          }
+        );
+      } else {
+        try {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          finish(true);
+        } catch (e) {
+          finish(false);
+        }
+      }
+    });
+  }
 });
